@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('scg')
+    .module('dtb')
     .config(routerConfig);
 
   /** @ngInject */
@@ -26,15 +26,15 @@
         controller: 'adminController',
         templateUrl: 'app/admin/main.html'
       })
-      .state('refund', {
-        url: '/refund',
-        templateUrl: 'app/admin/refund.html'
-      })
-      .state('quiz app', {
-        url: '/quiz',
-        controller: 'quizController',
-        templateUrl: 'app/quiz/quiz.html'
-      })
+      // .state('refund', {
+      //   url: '/refund',
+      //   templateUrl: 'app/admin/refund.html'
+      // })
+      // .state('quiz app', {
+      //   url: '/quiz',
+      //   controller: 'quizController',
+      //   templateUrl: 'app/quiz/quiz.html'
+      // })
       ;
 
     $urlRouterProvider.otherwise('/');

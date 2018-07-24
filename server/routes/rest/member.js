@@ -10,7 +10,7 @@ router.post('/members', function(req, res, next) {
   console.log(req.body);
 
   connection.query(
-    "INSERT INTO member (name, major, number, current, introduction, photo, createdAt, updatedAt) VALUES (\"" + req.body.name + "\",\"" + req.body.major + "\",\"" +
+    "INSERT INTO member (name, major, number, current_students, introduction, photo, createdAt, updatedAt) VALUES (\"" + req.body.name + "\",\"" + req.body.major + "\",\"" +
     req.body.number + "\",\"" + req.body.current + "\",\"" + req.body.introduction + "\",\"" + req.body.photo + "\",\"" + req.body.createdAt + "\",\"" + req.body.updatedAt + "\");",
     function(err, rows) {
       if (err) {
@@ -39,7 +39,7 @@ router.put('/members', function(req, res, next) {
     connection.query("UPDATE member SET number=\"" + req.body.number + "\" WHERE id=\"" + req.body.id + "\";", function(err, rows) {});
 
   if (req.body.current)
-    connection.query("UPDATE member SET current=\"" + req.body.current + "\" WHERE id=\"" + req.body.id + "\";", function(err, rows) {});
+    connection.query("UPDATE member SET current_students=\"" + req.body.current + "\" WHERE id=\"" + req.body.id + "\";", function(err, rows) {});
 
   if (req.body.introduction)
     connection.query("UPDATE member SET introduction=\"" + req.body.introduction + "\" WHERE id=\"" + req.body.id + "\";", function(err, rows) {});
@@ -59,7 +59,7 @@ router.get('/members', function(req, res, next) {
 });
 
 router.get('/members/current', function(req, res, next) {
-  connection.query('SELECT * FROM member WHERE current = 1', function(err, rows) {
+  connection.query('SELECT * FROM member WHERE current_students = 1', function(err, rows) {
     res.send(rows);
   });
 });

@@ -24,7 +24,17 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 			comment: "프로젝트 소개"
-		}
+		},
+	    createdAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      },
+	      updatedAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      }
 	}, {
 		tableName: 'project',
 		comment: "프로젝트 소개",

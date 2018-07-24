@@ -8,6 +8,7 @@ var loginController = function($scope, $http) {
         });
 
     }
+
 }
 
 
@@ -522,13 +523,13 @@ var AlertDemoCtrl = function ($scope) {
   };
 }
 
-angular.module('scg').controller('introController', introController);
-angular.module('scg').controller('careerController', careerController);
-angular.module('scg').controller('membersController', membersController);
-angular.module('scg').controller('projectController', projectController);
-angular.module('scg').controller('historyController', historyController);
-angular.module('scg').controller('loginController', loginController);
-angular.module('scg').controller('applyController', applyController);
+angular.module('dtb').controller('introController', introController);
+angular.module('dtb').controller('careerController', careerController);
+angular.module('dtb').controller('membersController', membersController);
+angular.module('dtb').controller('projectController', projectController);
+angular.module('dtb').controller('historyController', historyController);
+angular.module('dtb').controller('loginController', loginController);
+angular.module('dtb').controller('applyController', applyController);
 
 
 

@@ -270,8 +270,13 @@ var adminController = function ($scope, $http, $location) {
         $scope.status = data;
     });
 
+    $http.get("/session").success(function (data) {
+        $scope.session = data;
+    });
+
+
     $scope.setPage(0);
 }
-angular.module('scg').controller('fileController', fileController);
-// angular.module('scg').controller('galleryController',galleryController);
-angular.module('scg').controller('adminController', adminController);
+angular.module('dtb').controller('fileController', fileController);
+// angular.module('dtb').controller('galleryController',galleryController);
+angular.module('dtb').controller('adminController', adminController);

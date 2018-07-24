@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('scg')
+    .module('dtb')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

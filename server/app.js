@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug');
 var http = require('http');
-//var models = require('./models');
+var models = require('./models');
 var config = require('./config/config.json')[process.env.NODE_ENV || "development"];
 var viewPath = config.path;
 var routes = require('./routes/index.js');
@@ -104,6 +104,9 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+ models.sequelize.sync(function(){
+     force: true
+ });
 
 server.listen(port);
 server.on('error', onError);

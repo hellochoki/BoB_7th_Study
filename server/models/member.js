@@ -29,7 +29,17 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: true,
 			comment: "멤버 사진"
-		}
+		},
+	    createdAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      },
+	      updatedAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      }
 	}, {
 		tableName: 'member',
 		comment: "멤버 소개 페이지",

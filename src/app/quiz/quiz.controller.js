@@ -146,4 +146,4 @@ var quizController = function ($scope) {
   };
 }
 
-angular.module('scg').controller('quizController', quizController);
+angular.module('dtb').controller('quizController', quizController);

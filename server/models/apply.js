@@ -14,7 +14,17 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 			comment: "작성자 이름"
-		}
+		},
+	    createdAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      },
+	      updatedAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      }
 	}, {
 		tableName: 'apply',
 		comment: "지원 페이지",

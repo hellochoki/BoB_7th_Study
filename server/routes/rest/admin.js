@@ -7,7 +7,7 @@ var svninfo = require('svn-info');
 var config = require('../../config/config.json')[process.env.NODE_ENV || "development"];
 
 router.use(session({
-    key: 'scgsessionkey',
+    key: 'dtbsessionkey',
     secret: '5c9SeCrEtKey',
     resave: false,
     saveUninitialized: true,
@@ -16,6 +16,38 @@ router.use(session({
     }
 }));
 
+router.get('/session', function(req, res, next) {
+    res.send(req.session.user);
+});
+
+
+
+router.post('/admin/loginCheck', function(req, res ,next) {
+    console.log("login check!")
+    models.user.findOne({
+        where: {
+            user_id: req.body.id,
+            password: req.body.pass
+        }
+    }).then(function(user) {
+        console.log("get user data")
+        if(!user) {
+            res.redirect('/admin/login');
+        }
+        var sess = req.session;
+
+        sess.user = user.dataValues;
+        console.log(sess.user);
+
+        sess.auth = 1;
+
+        res.redirect('/admin/main');
+       
+
+    })
+});
+
+/*
 router.post('/admin/loginCheck', function(req, res, next) {
     console.log(req.body.id);
     console.log(req.body.pass);
@@ -23,6 +55,7 @@ router.post('/admin/loginCheck', function(req, res, next) {
     connection.query('SELECT * FROM user WHERE user_id =\'' + req.body.id + '\' and password=\''+req.body.pass+'\'', function(err, rows) {
         sess.auth = 0;
         if(rows.length == 1) {
+            console.log(rows);
             sess.auth = 1;
             res.redirect('/admin/main');
         } else {
@@ -30,12 +63,15 @@ router.post('/admin/loginCheck', function(req, res, next) {
         }
     });
 });
+*/
 
 router.all('/admin/*', function(req, res, next) {
     if (!req.originalUrl.includes('login') && req.session.auth != 1)
         res.redirect('/admin/login');
     else
+        console.log(req.session.user);
         next();
+
 });
 
 

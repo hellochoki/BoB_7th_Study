@@ -29,7 +29,17 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.INTEGER(11),
 			allowNull: true,
 			comment: "연결된 게시글 id"
-		}
+		},
+	    createdAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      },
+	      updatedAt: {
+	        type: 'TIMESTAMP',
+	        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+	        allowNull: false
+	      }
 	}, {
 		tableName: 'attachment',
 		comment: "첨부파일",

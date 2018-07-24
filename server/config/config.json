@@ -1,38 +1,35 @@
 {
-  "development": {
-    "title": "scg-new",
-    "port": 3000,
-    "db": {
-      "host": "211.249.61.207",
-      "user": "scg",
-      "username": "scg",
-      "password": "@dnjrtlf(*&",
-      "database": "dev_new_scg",
-      "dialect": "mysql",
-      "logging": true,
-      "multipleStatements": true,
-      "timezone": "+09:00",
-      "upload_path": "webdata/uploads"
+    "development": {
+        "title": "yournokt",
+        "port": 3000,
+        "db": {
+            "host": "yournokt.cplj1fqs9kzz.ap-northeast-2.rds.amazonaws.com",
+            "user": "choki",
+            "username": "choki",
+            "password": "chokichoki",
+            "database": "dtb",
+            "dialect": "mysql",
+            "logging": true,
+            "multipleStatements": true,
+            "timezone": "+09:00",
+            "upload_path": "webdata/uploads",
+            "operatorsAliases": false
+        },
+        "path": {
+              "view": "/../.tmp/serve",
+              "index": "/../src"
+        }
     },
-    "email": {
-      "id": "scg@scg.skku.ac.kr",
-      "password": "!tlzjs(*&"
-    },
-    "path": {
-      "view": "/../.tmp/serve",
-      "index": "/../src"
-    }
-  },
   "production": {
-    "title": "scg-new",
-    "port": 8000,
+    "title": "yournokt",
+    "port": 8080,
     "db": {
-      "host": "mysql.skku.ac.kr",
-      "port": "3306",
-      "user": "scg",
-      "username": "scg",
-      "password": "@dnjrtlf(*&",
-      "database": "scg",
+      "host": "127.0.0.1",
+      "port": "8080",
+      "user": "root",
+      "username": "root",
+      "password": "suattt",
+      "database": "test",
       "dialect": "mysql",
       "logging": true,
       "multipleStatements": true,

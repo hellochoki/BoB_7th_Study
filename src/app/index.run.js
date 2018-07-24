@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('scg')
+    .module('dtb')
     .run(runBlock);
 
   /** @ngInject */
