@@ -1,0 +1,1 @@
+$.fn.hasAttr=function(name){return void 0!==this.attr(name)};

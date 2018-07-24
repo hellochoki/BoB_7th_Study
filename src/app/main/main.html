@@ -1,0 +1,635 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="keywords" content="Skku System Consultant Group" />
+  <script type="application/x-javascript">
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $(".scroll").click(function (event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000);
+      });
+    });
+    new WOW().init();
+    $(document).ready(function () {
+      $('.cm-overlay').cmOverlay();
+    });
+  </script>
+
+  <!-- animation -->
+
+  <!-- //animation -->
+
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+  <!--
+<script src="js/angular/membersController.js"></script>
+<script src="js/angular/careerController.js"></script>
+-->
+
+</head>
+
+<body>
+  <!-- banner -->
+  <div class="banner jarallax" id="banner">
+    <div class="agileinfo-dot">
+      <div class="header">
+        <div class="container">
+          <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="agileits-logo">
+                <!--<img src="images/logo1.png" alt=""/>-->
+                <h1>
+                  <a href="index.html">SCG</a>
+                </h1>
+              </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+              <nav>
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="#about" class="scroll">About</a>
+                  </li>
+                  <li>
+                    <a href="#project" class="scroll">Project</a>
+                  </li>
+                  <li>
+                    <a href="#team" class="scroll">Team</a>
+                  </li>
+                  <li>
+                    <a href="#career" class="scroll">Career</a>
+                  </li>
+                  <li>
+                    <a href="#history" class="scroll">History</a>
+                  </li>
+                  <li>
+                    <a href="#recruit" class="scroll">Recruit</a>
+                  </li>
+                  <li>
+                    <a href="#contact" class="scroll">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- /.navbar-collapse -->
+          </nav>
+        </div>
+      </div>
+      <div class="w3layouts-banner-info">
+        <div class="container">
+          <div class="w3ls-text">
+            <h2>System
+              <br>Consultant
+              <br>Group</h2>
+          </div>
+          <div class="w3-arrow bounce animated">
+            <a href="#indro" class="scroll">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //banner -->
+  <!-- introduction -->
+  <div class="introduction slideanim" id="indro">
+    <div class="container">
+      <div class="w3l-heading slideanim">
+        <h3>Introduction</h3>
+        <div class="w3ls-border"> </div>
+      </div>
+      <div class="introduction-info slideanim" ng-controller="introController">
+        <p>{{data}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- //introduction -->
+  <!-- about -->
+  <div class="about" id="about">
+    <div class="container">
+      <div class="w3l-heading about-heading slideanim">
+        <h3>About Us</h3>
+        <div class="w3ls-border about-border"> </div>
+      </div>
+      <div class="agileits-about-grids slideanim">
+        <div class="about-grids">
+          <div class="col-md-6 about-grid">
+            <div class="col-xs-3 about-grid-left">
+              <span class="glyphicon glyphicon-tasks effect-1" aria-hidden="true"></span>
+            </div>
+            <div class="col-xs-9 about-grid-right">
+              <h4>IT 컨설팅</h4>
+              <p>성균관대학교 교내외 IT 관련 업무 및 프로젝트에 대한 컨설팅을 진행합니다.</p>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <div class="col-md-6 about-grid">
+            <div class="col-xs-3 about-grid-left">
+              <span class="glyphicon glyphicon-hdd effect-1" aria-hidden="true"></span>
+            </div>
+            <div class="col-xs-9 about-grid-right">
+              <h4>서버 관리 및 시스템 구축</h4>
+              <p>성균관대학교에서 요구되는 시스템을 구축하고 시스템에 필요한 서버를 직접적으로 관리합니다.</p>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="about-grids1">
+          <div class="col-md-6 about-grid">
+            <div class="col-xs-3 about-grid-left">
+              <span class="glyphicon glyphicon-globe effect-1" aria-hidden="true"></span>
+            </div>
+            <div class="col-xs-9 about-grid-right">
+              <h4>사이트 운영</h4>
+              <p>소프트웨어대학 홈페이지를 비롯하여 강의실 배정, 세미나실 예약과 같은 서비스에 필요한 사이트를 제작 및 운영합니다.</p>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <div class="col-md-6 about-grid">
+            <div class="col-xs-3 about-grid-left">
+              <span class="glyphicon glyphicon-wrench effect-1" aria-hidden="true"></span>
+            </div>
+            <div class="col-xs-9 about-grid-right">
+              <h4>교내 PC실 관리</h4>
+              <p>성균관대학교 내 특정 목적을 위해 쓰이는 다양한 PC실을 관리합니다.</p>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //about -->
+  <!-- gallery -->
+  <div class="gallery" id="project">
+    <div class="container">
+      <div class="w3l-heading slideanim">
+        <h3>Our Project</h3>
+        <div class="w3ls-border"> </div>
+        <div class="w3ls-border blank-border"> </div>
+      </div>
+      <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+        <!--분류 가능하지만 제외함
+               <ul id="myTab" class="nav nav-tabs slideanim" role="tablist">
+                  <li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">All</a></li>
+                  <li role="presentation"><a href="#learning" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">Category 1</a></li>
+                  <li role="presentation"><a href="#playing" role="tab" id="playing-tab" data-toggle="tab" aria-controls="playing">Category 2</a></li>
+                  <li role="presentation"><a href="#painting" role="tab" id="painting-tab" data-toggle="tab" aria-controls="painting">Category 3</a></li>
+                  <li role="presentation"><a href="#school" role="tab" id="school-tab" data-toggle="tab" aria-controls="school">Category 4</a></li>
+               </ul>
+               -->
+        <div id="myTabContent" class="tab-content slideanim" ng-controller="projectController">
+          <div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
+            <div class="w3_tab_img">
+              <div uib-carousel active="active" interval="2500">
+                <div uib-slide ng-repeat="page in pageArray" index="page.pageNum">
+                  <div ng-repeat="project in page" class="col-sm-3 w3_tab_img_left">
+                    <div class="demo">
+                      <figure class="imghvr-shutter-in-out-diag-2">
+                        <img src="images/project/{{project.img}}" alt=" " class="img-responsive" />
+                      </figure>
+                    </div>
+                    <div class="agile-gallery-info">
+                      <h5>{{project.name}}</h5>
+                      <p>{{project.member}}</p>
+                      <p>({{project.introduction}})</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="w3ls-border blank-border"> </div>
+  <!-- //gallery -->
+  <!-- team -->
+  <div class="team jarallax" id="team">
+    <div class="team-dot">
+      <div class="container slideanim">
+        <div class="w3l-heading about-heading">
+          <h3>Our Team</h3>
+          <div class="w3ls-border about-border"> </div>
+        </div>
+        <div class="agileits-team-grids slideanim" ng-controller="membersController">
+          <div id="myTabContent" class="tab-content slideanim">
+            <div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
+              <div class="w3_tab_img">
+                <div uib-carousel active="active" interval="3000">
+                  <div uib-slide ng-repeat="page in pageArray" index="page.pageNum">
+                    <div ng-repeat="member in page" class="col-md-3 agileits-team-grid">
+                      <div class="team-info">
+                        <img src="images/member/{{member.photo}}" />
+                        <div class="team-caption">
+                          <h4>{{member.name}}</h4>
+                          <p>{{member.introduction}}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 agileits-team-grid" style="{{page.style_line}}">
+                      <div class="team-info">
+                        <img src="images/member/none.jpg" />
+                        <div class="team-caption">
+                          <h4>None</h4>
+                          <p>None</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w3ls-border blank-border"> </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //team -->
+  <!-- news -->
+  <div class="news" id="career">
+    <div class="container">
+      <div class="w3l-heading slideanim">
+        <h3>Our Career</h3>
+        <div class="w3ls-border"> </div>
+      </div>
+      <div class="wthree-news-grids slideanim">
+        <!-- date -->
+        <div id="design" class="date">
+          <div id="cycler" ng-controller="careerController">
+            <div ng-repeat="career in careers" class="wthree-news-grid " style="{{career.style}}">
+              <div class="wthree-news-left">
+                <h4>{{career.year}}</h4>
+              </div>
+              <div class="date-text">
+                <p>20{{career.year}} {{career.monthName}}</p>
+                <a href="#">{{career.title}}</a>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <script>
+            var cycleevent
+            var element = document.getElementById("career")
+
+            function cycle($item, $cycler) {
+              //$item.nextAll().hide();
+              $item.nextAll
+              cycleevent = setTimeout(cycle, 2000, $item.next(), $cycler);
+
+              $item.slideUp(1000, function () {
+                $item.nextAll().slice(4, 5).addClass("slide");
+                $item.nextAll().slice(0, 5).show();
+                $item.appendTo($cycler).hide();
+              });
+            }
+
+            //cycle($('#cycler div:first'),  $('#cycler'));
+            element.onmouseleave = function () {
+              //alert("finish!");
+              clearTimeout(cycleevent);
+              element.onmouseover = function () {
+                //alert("start!");
+                cycle($('#cycler div:first'), $('#cycler'));
+                element.onmouseover = null;
+              };
+            };
+            element.onmouseover = function () {
+              //alert("start!");
+              cycle($('#cycler div:first'), $('#cycler'));
+              element.onmouseover = null;
+            };
+          </script>
+        </div>
+        <!-- //date -->
+      </div>
+    </div>
+  </div>
+  <!-- //news -->
+  <!-- history -->
+  <div class="history" id="history">
+    <div class="container slideanim">
+      <div class="w3l-heading about-heading">
+        <h3>Our Experience</h3>
+        <div class="w3ls-border about-border"> </div>
+        <div class="history-info slideanim">
+          <p>지금까지의 System Consultant Group 회원들과 그들이 걸어온 길을 확인하세요.</p>
+        </div>
+        <div class="w3ls-border blank-border"> </div>
+      </div>
+
+      <!--Member -->
+      <div class="accordion" ng-controller="membersController">
+        <div class="accordion-section" ng-element-ready="sectionReady()">
+          <a class="accordion-section-title" href="#accordion-allmember">
+            <span>SCG 회원 현황</span>
+            <i class="glyphicon glyphicon-chevron-down"></i>
+          </a>
+          <div id="accordion-allmember" class="accordion-section-content">
+            <div>
+              <ul>
+                <li ng-repeat="member_number in membersByNumber track by $index" ng-show="{{member_number.length > 0}}">
+                  <span>{{member_number.number}}
+                    <h7 style="font-size:13px; font-weight: 500">기</h7>
+                  </span>
+                  </span>{{member_number.str}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Hisory -->
+      <div class="accordion" ng-controller="historyController">
+        <div ng-repeat="sec in section" class="accordion-section" ng-element-ready="sectionReady()">
+          <a class="accordion-section-title" href="#accordion-{{sec.sectionNum}}">
+            <span>{{sec.startYear}} - {{sec.endYear}}</span>
+            <i class="glyphicon glyphicon-chevron-down"></i>
+          </a>
+          <div id="accordion-{{sec.sectionNum}}" class="accordion-section-content">
+            <div ng-repeat="yrhistory in sec">
+              <h6>{{yrhistory.year}}</h6>
+              <ul>
+                <li ng-repeat="history in yrhistory">
+                  <span class="{{history.style}}">{{history.month}}</span>{{history.content}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- member accordion
+      <div class="accordion" ng-controller="historyController">
+        <div ng-repeat="sec in section" class="accordion-section" ng-element-ready="sectionReady()">
+          <a class="accordion-section-title" href="#accordion-{{sec.sectionNum}}">
+              <span>{{sec.startYear}} - {{sec.endYear}}</span>
+              <i class="glyphicon glyphicon-chevron-down"></i>
+          </a>
+          <div id="accordion-{{sec.sectionNum}}" class="accordion-section-content">
+            <div ng-repeat="yrhistory in sec">
+              <h6>{{yrhistory.year}}</h6>
+              <ul>
+                <li ng-repeat="history in yrhistory"><span class="{{history.style}}">{{history.month}}</span>{{history.content}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+
+      <script>
+        setTimeout(function () {
+          function close_accordion_section() {
+            jQuery('.accordion .accordion-section-title').removeClass('active');
+            jQuery('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+          }
+
+          jQuery('.accordion-section-title').click(function (e) {
+            // Grab current anchor value
+            var currentAttrValue = jQuery(this).attr('href');
+
+            if (jQuery(e.target).is('.active')) {
+              close_accordion_section();
+            } else {
+              close_accordion_section();
+
+              // Add active class to section title
+              jQuery(this).addClass('active');
+              // Open up the hidden content panel
+              jQuery('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+            }
+
+            e.preventDefault();
+          });
+        }, 500);
+      </script>
+    </div>
+  </div>
+  <!-- //history -->
+  <!-- recruit -->
+  <div class="recruit jarallax" id="recruit" role="recruittab" ng-controller="applyController">
+    <div class="recruit-dot">
+      <div class="container">
+        <h2 class="text-center slideanim">SCG와 함께 새롭고 멋진 경험을 쌓아보세요!</h2>
+        <a data-toggle="modal" data-target="#largeModal" class="slideanim disabled" ng-show="!applyData.status">{{applyData.btn}}</a>
+        <a href="{{applyData.file}}" data-toggle="modal" data-target="#largeModal" class="slideanim enabled" ng-show="applyData.status"
+          target="_self">{{applyData.btn}}</a>
+        <br>
+        <h4 class="text-center slideanim">{{applyData.message}}</h2>
+      </div>
+      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">SCG 22기 선발</h4>
+            </div>
+            <div class="modal-body">
+              <p class="banner-p1">현재는 22기 선발기간이 아닙니다.</p>
+              <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-lg btn-success" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- contact -->
+
+  <div class="contact-form" id="contact">
+    <div class="w3agile_map">
+      <div class="agileinfo_map_color_grid">
+        <div class="col-md-4 agileinfo_map_color_grid_left slideanim">
+          <h4>
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Mail</h4>
+          <p>
+            <a href="mailto:scg@scg.skku.ac.kr">scg@scg.skku.ac.kr</a>
+          </p>
+        </div>
+        <div class="col-md-4 agileinfo_map_color_grid_left slideanim">
+          <h4>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Address</h4>
+          <p>성균관대학교 자연과학캠퍼스
+            <br>제1공학관 22221</p>
+        </div>
+        <div class="col-md-4 agileinfo_map_color_grid_left slideanim">
+          <h4>
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>Phone</h4>
+          <p>031-290-7959</p>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  <div class="contact-form" id="contact">
+    <div class="col-md-4 contact-form-left">
+      <h5 class="slideanim">Our Location</h5>
+      <div class="address-grids slideanim">
+        <div class="address-grid">
+          <div class="address-icon">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+          </div>
+          <div class="address-info">
+            <p><br>성균관대학교<br> 자연과학캠퍼스
+              <br> 제1공학관 22221.
+            </p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="address-grid">
+          <div class="address-icon">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </div>
+          <div class="address-info">
+            <p><br>031-290-7959</p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="address-grid">
+          <div class="address-icon">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="address-info">
+            <p><a href="mailto:example@email.com"><br>scg@scg.skku.ac.kr</a></p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </div>
+    -->
+  <!--
+    <div class="col-md-8 contact-form-right">
+      <h5 class="slideanim">Contact Form</h5>
+      <div class="contact-form-grid slideanim">
+        <form action="#" method="post">
+          <div class="fields-grid">
+            <div class="styled-input agile-styled-input-top">
+              <input type="text" name="Full Name" required="">
+              <label>Full Name</label>
+              <span></span>
+            </div>
+            <div class="styled-input agile-styled-input-top">
+              <input type="text" name="Phone" required="">
+              <label>Phone</label>
+              <span></span>
+            </div>
+            <div class="styled-input">
+              <input type="email" name="Email" required="">
+              <label>Email</label>
+              <span></span>
+            </div>
+            <div class="styled-input">
+              <input type="text" name="Subject" required="">
+              <label>Subject</label>
+              <span></span>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <div class="styled-input textarea-grid">
+            <textarea name="Message" required=""></textarea>
+            <label>Message</label>
+            <span></span>
+          </div>
+          <input type="submit" value="SEND">
+        </form>
+      </div>
+    </div>
+    -->
+
+  <div class="clearfix"> </div>
+  </div>
+  <!-- //contact -->
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <p>© 2017 System Consultant Group . All Rights Reserved | Template by
+        <a href="http://w3layouts.com/"> W3layouts</a>
+      </p>
+    </div>
+  </footer>
+  <!-- //footer -->
+  <!-- <script src="js/SmoothScroll.min.js"></script> -->
+  <script type="text/javascript">
+    /* init Jarallax */
+    angular.element('#banner').jarallax({
+      speed: 0.5,
+      imgWidth: 1366,
+      imgHeight: 768
+    });
+  </script>
+  <!-- here stars scrolling icon -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+      */
+
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+
+    });
+
+    $(window).scroll(function () {
+      $(".slideanim").each(function () {
+        var pos = $(this).offset().top;
+
+        var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+      });
+    });
+  </script>
+  <!--<script src="js/initView.js"></script>-->
+  <!-- //here ends scrolling icon -->
+</body>
+
+</html>

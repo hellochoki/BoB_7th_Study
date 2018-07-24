@@ -1,0 +1,47 @@
+{
+  "development": {
+    "title": "scg-new",
+    "port": 3000,
+    "db": {
+      "host": "211.249.61.207",
+      "user": "scg",
+      "username": "scg",
+      "password": "@dnjrtlf(*&",
+      "database": "dev_new_scg",
+      "dialect": "mysql",
+      "logging": true,
+      "multipleStatements": true,
+      "timezone": "+09:00",
+      "upload_path": "webdata/uploads"
+    },
+    "email": {
+      "id": "scg@scg.skku.ac.kr",
+      "password": "!tlzjs(*&"
+    },
+    "path": {
+      "view": "/../.tmp/serve",
+      "index": "/../src"
+    }
+  },
+  "production": {
+    "title": "scg-new",
+    "port": 8000,
+    "db": {
+      "host": "mysql.skku.ac.kr",
+      "port": "3306",
+      "user": "scg",
+      "username": "scg",
+      "password": "@dnjrtlf(*&",
+      "database": "scg",
+      "dialect": "mysql",
+      "logging": true,
+      "multipleStatements": true,
+      "timezone": "+09:00",
+      "upload_path": "webdata/uploads"
+    },
+    "path": {
+      "view": "/../dist",
+      "index": "/../dist"
+    }
+  }
+}

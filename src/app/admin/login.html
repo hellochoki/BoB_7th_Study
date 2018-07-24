@@ -1,0 +1,27 @@
+<head>
+    <link href="admin/css/login.css" rel="stylesheet" />
+</head>
+<div class="login-body" ng-controller="loginController">
+    <div class="login">
+        <div class="login-screen">
+            <div class="login-app-title">
+                <h1>관리자 로그인</h1>
+            </div>
+            <div class="login-form">
+                <form ng-controller="loginController" ng-submit=check()>
+                    <div class="control-group">
+                        <input type="text" class="login-input" value="" ng-model="id" placeholder="아이디" id="login-name">
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="login-input" value="" ng-model="password" placeholder="비밀번호" id="login-pass">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+                    <div class="control-group">
+                        <input type="submit" id="submit" class="login-btn btn-primary btn-large btn-block" value="로그인">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

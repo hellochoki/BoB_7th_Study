@@ -1,0 +1,39 @@
+{
+  "name": "ng-image-gallery",
+  "homepage": "https://github.com/thatisuday/ng-image-gallery",
+  "authors": [
+    "Uday Hiwarale <uhiwarale@gmail.com>"
+  ],
+  "description": "Probably the best angular inline and modal image gallery combined...",
+  "main": [
+    "dist/ng-image-gallery.js",
+    "dist/ng-image-gallery.css"
+  ],
+  "keywords": [
+    "directive",
+    "gallery",
+    "image",
+    "modal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "hammerjs": "^2.0.8"
+  },
+  "_release": "ec446f56bf",
+  "_resolution": {
+    "type": "commit",
+    "commit": "ec446f56bf9cfdb4c8d4996d25c229341c94e3a2"
+  },
+  "_source": "https://github.com/jkl5616/ng-image-gallery.git",
+  "_target": "ec446f56bf9cfdb4c8d4996d25c229341c94e3a2",
+  "_originalSource": "https://github.com/jkl5616/ng-image-gallery.git"
+}

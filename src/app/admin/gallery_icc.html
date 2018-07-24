@@ -1,0 +1,41 @@
+<!-- gallery_icc.html -->
+<style type="text/css">
+    .wrapper {
+        margin: 10px 10px 10px 10px;
+    }
+</style>
+
+
+
+<div class="main-panel" ng-controller="fileController">
+
+    <nav class="navbar navbar-default navbar-fixed" style="background-color: lightgrey;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand ng-binding" href="#" style="color:black;">정보통신대학 졸업사진 갤러리</a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- <input type="button" value="버튼"/> -->
+    <p style="color: darkgray;">※사진은 우클릭을 통해 '다른이름으로 저장'으로 다운로드 받으실 수 있습니다.</p>
+    <div class="wrapper">
+        <div ng-image-gallery images="images_icc" thumbnails="true" thumb-size="300" bubbles="true" bubble-size="20" img-bubbles="false"
+            bg-close="false" piracy="true" img-anim="fadeup">
+
+        </div>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</div>
+<!-- main panel -->

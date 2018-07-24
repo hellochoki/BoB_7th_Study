@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">SCG 관리자 페이지 </h4>
+                <p class="category">현재 상태</p>
+                </p>
+                <p> 등록된 멤버 : {{ status.member }} 명
+                <br> 등록된 프로젝트 : {{ status.project }} 개   
+                <br> 등록된 실적 : {{ status.career }} 개
+                <br> 등록된 연혁 : {{ status.history }} 개 
+                <br> 업로드 된 파일 : {{ status.file }} 개        
+            </div>
+            <div class="content table-responsive table-full-width">
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-12">
+            <div class="card">
+            <div class="header">
+                <h4 class="title">Debug Info </h4>
+                <br> SVN 마지막 업데이트 : {{ status.changeDate }}    
+                <br> Revision : {{ status.revision}}       
+                <br> Mode : {{ status.mode }}     
+<!-- <div uib-alert style="background-color:#fa39c3;color:white">A happy alert!</div> -->
+            </div>
+            <div class="content table-responsive table-full-width">
+            </div>
+        </div>
+        </div>
+</div>

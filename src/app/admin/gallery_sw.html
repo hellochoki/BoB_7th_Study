@@ -1,0 +1,41 @@
+<!-- gallery_sw.html -->
+<style type="text/css">
+    .wrapper {
+        margin: 10px 10px 10px 10px;
+    }
+</style>
+<div class="main-panel" ng-controller="fileController" ng-init="getImages_SW()">
+
+    <nav class="navbar navbar-default navbar-fixed" style="background-color: lightgrey;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand ng-binding" href="#" style="color:black;">소프트웨어대학 졸업사진 갤러리</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="wrapper">
+        <div class="container-fluid">
+            <br>
+            <p>재학생들을 통해 개인별 포토앨범을 한 장씩 제작하였으나, 확인되지 않은 졸업생이 많습니다. 포토앨범이 없는 졸업생은 행정실로 본인사진과 함께 알려주시면 별도로 다시 만들어 드리겠습니다.^^    </p>
+            <p style="color: darkgray;">※받고 싶은 사진을 클릭하신 후 다운로드 버튼을 누르세요.</p>
+            <div id="test">
+
+            </div>
+            <div ng-image-gallery methods="methods" images="images_sw" thumbnails="true" thumb-size="300" bubbles="true" bubble-size="20"
+                img-bubbles="false" bg-close="false" piracy="true" img-anim="fadeup" on-open="opened();" before-open="beforeOpen();" after-close="afterClose();"
+                on-close="closed();">
+
+            </div>
+        </div>
+    </div>
+
+</div>

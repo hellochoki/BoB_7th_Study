@@ -1,0 +1,82 @@
+<div class="content" ng-controller="projectController">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">프로젝트 추가 </h4>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <form ng-submit=add()>
+                    &nbsp &nbsp
+                    <input type="text" value="" ng-model="name" placeholder="프로젝트" id="name"> &nbsp
+                    <input type="text" value="" ng-model="member" placeholder="멤버" id="member"> &nbsp
+                    <input type="text" value="" ng-model="introduction" placeholder="소개" id="introduction"> &nbsp
+                    <input type="text" value="" ng-model="img" placeholder="이미지 파일 이름" id="img"> &nbsp
+                    <input type="submit" id="submit" value="추가">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">프로젝트 목록</h4>
+                        <p class="category">id순 정렬</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>ID</th>
+                                <th>프로젝트</th>
+                                <th>멤버</th>
+                                <th>소개</th>
+                                <th>사진파일</th>
+                                <th>수정</th>
+                                <th>삭제</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="project in projects">
+                                    <th>{{ project.id }}</th>
+                                    <th ng-hide="editingData[project.id]">{{ project.name }}</th>
+                                    <th ng-show="editingData[project.id]">
+                                        <input type="text" ng-model="project.name" />
+                                    </th>
+                                    <th ng-hide="editingData[project.id]">{{ project.member }}</th>
+                                    <th ng-show="editingData[project.id]">
+                                        <input type="text" ng-model="project.member" />
+                                    </th>
+                                    <th ng-hide="editingData[project.id]">{{ project.introduction }}</th>
+                                    <th ng-show="editingData[project.id]">
+                                        <input type="text" ng-model="project.introduction" />
+                                    </th>
+                                    <th ng-hide="editingData[project.id]">{{ project.img }}</th>
+                                    <th ng-show="editingData[project.id]">
+                                        <input type="text" ng-model="project.img" />
+                                    </th>
+                                    <th ng-hide="editingData[project.id]">
+                                        <button type="button" ng-click="modify(project)" title="수정" class="btn btn-simple btn-list">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                    </th>
+                                    <th ng-show="editingData[project.id]">
+                                        <button type="button" ng-click="update(project)" title="확인" class="btn  btn-simple btn-list">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </th>
+                                    <th>
+                                        <button type="button" ng-click="delete(project.id)" title="삭제" class="btn btn-simple btn-list">
+                                            <i class="fa fa-close"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

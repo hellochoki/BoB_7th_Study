@@ -1,0 +1,86 @@
+<div ng-controller="fileController">
+    <div class="content">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">졸업 앨범 사진 관리</h4>
+                    <p class="category">정보통신대학 졸업 사진, 소프트웨어 대학 졸업 사진을 관리합니다.</p>
+                    </p>
+                    <div class="fileUpload btn uploadbtn" name="uploadFile" ngf-select="uploadICC($files)" multiple="multiple">정보통신대학 졸업 사진 업로드</div>
+                    <br>
+                    <div class="fileUpload btn uploadbtn" name="uploadFile" ngf-select="uploadSW($files)" multiple="multiple">소프트웨어 졸업 사진 업로드</div><br>
+                </div>
+                <div class="content table-responsive table-full-width">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">정보통신대학 졸업 사진 목록</h4>
+                        <p class="category">public/images/gallery_icc 위치</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>파일 이름</th>
+                                <th>용량</th>
+                                <th>다운로드</th>
+                                <th>삭제</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="file in iccfiles">
+                                    <th>{{ file.name }}</th>
+                                    <th>{{ file.size }}</th>
+                                    <th><a target="_self" href="images/gallery_icc/{{file.name}}" download><i class="fa fa-download"></i></a></th>
+                                    <th>
+                                        <button type="button" ng-click="iccdelete(file.name)" title="삭제" class="btn btn-simple btn-list">
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">소프트웨어대학 졸업 사진 목록</h4>
+                        <p class="category">public/images/gallery_sw 위치</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>파일 이름</th>
+                                <th>용량</th>
+                                <th>다운로드</th>
+                                <th>삭제</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="file in swfiles">
+                                    <th>{{ file.name }}</th>
+                                    <th>{{ file.size }}</th>
+                                    <th><a target="_self" href="images/gallery_sw/{{file.name}}" download><i class="fa fa-download"></i></a></th>
+                                    <th>
+                                        <button type="button" ng-click="swdelete(file.name)" title="삭제" class="btn btn-simple btn-list">
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

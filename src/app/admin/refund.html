@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>JPA 금액 확인</h2>
+  <form>
+    <div class="form-group">
+      <label>사용 비밀번호</label>
+      <input type="password" class="form-control" id="PW">
+      <br>
+      <label>학번</label>
+      <input type="text" class="form-control" id="USERID" placeholder="학번다치면 자동으로불러옴">
+      <br>
+      <label>이미 환불함</label>
+      <p><span id="REFUNDED"> 학번을 입력하시오</span></p>
+      <label>오류 검출 안됨</label>
+      <p><span id="VALID">학번을 입력하시오 </span></p>
+      <label>잔여 금액</label>
+      <p><span id="BALANCE">학번을 입력하시오  </span></p>
+      <label>추정치 (입금-사용)</label>
+      <p><span id="ESTIMATED">학번을 입력하시오 </span></p>
+      <label>환불할 금액</label>
+      <p><span id="TOREFUND">학번을 입력하시오</span></p>
+      <button id="chnStatus" onclick="chn()" class="btn btn-default">환불 처리하기</button>
+    </div>
+  </form>
+
+  <script>
+      $('#USERID').on("change", function() {
+          var val = $(this).val();
+          if(val.startsWith("20"))
+            $(this).val(val.slice(2,val.length));
+            else if($(this).val().length == 8) 
+            $.get("refund/"+$("#PW").val()+"/"+$(this).val(), function( data ) {
+                if(data.length == 0) alert("유저를 찾지 못했습니다.");
+                else
+                Object.keys(data[0]).forEach(function(key,index) {
+                  try { document.getElementById(key).innerHTML = data[0][key];} catch (err){};
+                });
+            });
+      });
+
+      function chn() {
+        $.get("refund/"+$("#PW").val()+"/"+$('#USERID').val()+"/1", function( data ) {
+            alert("처리 완료");
+        });
+      }
+  </script>
+</div>
