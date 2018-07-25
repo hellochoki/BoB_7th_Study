@@ -1,3 +1,5 @@
+
+
 var loginController = function($scope, $http) {
 
     $scope.check = function() {
@@ -12,6 +14,32 @@ var loginController = function($scope, $http) {
 }
 
 
+var regiController = function($scope, $http) {
+
+
+    $scope.register = function() {
+        console.log("regi start");
+        
+        $http.post("/admin/regi", {
+            id: $scope.user_id,
+            pass : $scope.password,
+            email : $scope.email
+        }).then(function(res){
+            console.log(res.data);
+            if (res.data.error) {
+                console.log(res.data.error);
+                alert('에러가 발생하였습니다');
+                window.location.href='/main'
+            } else {
+                alert("회원이 등록되었습니다");
+                window.location.href='/main'
+            }
+        });
+    }
+
+}
+
+ 
 var careerController = function($scope, $http) {
 
     $scope.add = function() {
@@ -530,6 +558,7 @@ angular.module('dtb').controller('projectController', projectController);
 angular.module('dtb').controller('historyController', historyController);
 angular.module('dtb').controller('loginController', loginController);
 angular.module('dtb').controller('applyController', applyController);
+angular.module('dtb').controller('regiController', regiController);
 
 
 

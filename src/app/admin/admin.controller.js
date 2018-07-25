@@ -224,38 +224,14 @@ var adminController = function ($scope, $http, $location) {
                 $scope.title = '홈';
                 break;
             case 1:
-                $scope.url = 'app/admin/members.html';
-                $scope.title = '멤버';
+                $scope.url = 'app/admin/regi.html';
+                $scope.title = '등록하기';
                 break;
             case 2:
-                $scope.url = 'app/admin/projects.html';
-                $scope.title = '프로젝트';
+                $scope.url = 'app/admin/mypage.html';
+                $scope.title = '내 계좌';
                 break;
-            case 3:
-                $scope.url = 'app/admin/career.html';
-                $scope.title = '실적';
-                break;
-            case 4:
-                $scope.url = 'app/admin/history.html';
-                $scope.title = '연혁';
-                break;
-            case 5:
-                $scope.url = 'app/admin/attachment.html';
-                $scope.title = '파일';
-                break;
-            case 6:
-                $scope.url = 'app/admin/gallery.html';
-                $scope.title = '갤러리';
-                break;
-            case 7:
-                $scope.url = 'app/admin/gallery_icc.html';
-                $scope.title = '정보통신대학';
-                break;
-            case 8:
-                $scope.url = 'app/admin/gallery_sw.html';
-                $scope.title = '소프트웨어대학';
-                break;
-                //by seojin
+            
         }
         $scope.page = data;
         console.log(data);
@@ -271,6 +247,7 @@ var adminController = function ($scope, $http, $location) {
     });
 
     $http.get("/session").success(function (data) {
+        $scope.session = null;
         $scope.session = data;
     });
 

@@ -6,19 +6,23 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		bitcoin: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false
+			allowNull: true,
+			defaultValue : 0
 		},
 		ripple: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false
+			allowNull: true,
+			defaultValue : 0
 		},
 		neo: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false
+			allowNull: true,
+			defaultValue : 0
 		},
 		eth: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false
+			allowNull: true,
+			defaultValue : 0
 		},
 	    createdAt: {
 	        type: 'TIMESTAMP',
@@ -33,12 +37,9 @@ module.exports = function(sequelize, DataTypes) {
 	}, {
 		tableName: 'wallet',
 		comment: "지갑",
-		classMethods:{
-			associate: function(models){
-				wallet.belongsTo(models.user,{foreignKey: {w_num: 'w_id',allowNull: false},onDelete: 'CASCADE', onUpdate: 'CASCADE'});
-		},
+	
 		charset: 'utf8'
-	}
+	
 	});
 	return wallet;
 };

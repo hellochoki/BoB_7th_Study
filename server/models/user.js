@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		w_num: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false
+			allowNull: true
 		},
 	    createdAt: {
 	        type: 'TIMESTAMP',

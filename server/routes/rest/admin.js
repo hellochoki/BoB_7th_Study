@@ -16,6 +16,7 @@ router.use(session({
     }
 }));
 
+
 router.get('/session', function(req, res, next) {
     res.send(req.session.user);
 });
@@ -23,7 +24,7 @@ router.get('/session', function(req, res, next) {
 
 
 router.post('/admin/loginCheck', function(req, res ,next) {
-    console.log("login check!")
+    console.log("login check!");
     models.user.findOne({
         where: {
             user_id: req.body.id,
@@ -32,7 +33,7 @@ router.post('/admin/loginCheck', function(req, res ,next) {
     }).then(function(user) {
         console.log("get user data")
         if(!user) {
-            res.redirect('/admin/login');
+            res.redirect('/main');
         }
         var sess = req.session;
 
@@ -41,8 +42,49 @@ router.post('/admin/loginCheck', function(req, res ,next) {
 
         sess.auth = 1;
 
-        res.redirect('/admin/main');
+        res.redirect('/main');
        
+
+    })
+});
+
+
+router.post('/admin/regi', function(req, res ,next) {
+    console.log("regi check!"+ req.body.id +req.body.pass);
+    var user_data;
+
+
+
+    models.user.findOne({
+        where: {
+            user_id: req.body.id
+        }
+    }).then(function(isuser) {
+        console.log("동일 아이디 체크")
+        if(!isuser) {
+            console.log("동일 아이디 없음");
+            req.body.user_id = req.body.id;
+            req.body.password = req.body.pass;
+            req.body.id = null;
+            models.user.create(req.body).then(function(cuser){
+
+                req.body.w_id = cuser.id
+                models.wallet.create(req.body).then(function(){
+                    res.send({
+                      error: false
+                    });
+                });
+
+                    
+            });
+            
+        }
+        else{
+        console.log("동일 아이디 있음!!!!!!");
+        res.send({
+          error: true
+        });
+       }
 
     })
 });
@@ -94,30 +136,32 @@ router.get('/admin/welcome', function(req, res, next) {
     }
 });
 
-router.get('/admin/status', function(req, res, next) {
-    var data = Object();
-    connection.query('SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = \''+config.db.database+'\'', function(err, rows) {
-        console.log(rows);
-        rows.forEach(function(obj) {
-            data[obj.table_name] = obj.table_rows;
-        });
-        walk('public', function(err, results) {
-            if (err) throw err;
-                data.file = results.length;
-            svninfo('', 'HEAD', function(err, info) {
-                if (err) {
-                    data.revision = 'cannot find SVN in shell';
-                    data.changeDate = 'cannot find SVN in shell';  
-                } else {
-                    data.revision = info.revision;
-                    data.changeDate = info.lastChangedDate;
-                }
-                data.mode = process.env.NODE_ENV;
-                res.send(data);
-            });
-        });
-    });
-});
+// router.get('/admin/status', function(req, res, next) {
+//     var data = Object();
+//     connection.query('SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = \''+config.db.database+'\'', function(err, rows) {
+//         console.log(rows);
+//         rows.forEach(function(obj) {
+//             data[obj.table_name] = obj.table_rows;
+//         });
+//         walk('public', function(err, results) {
+//             if (err) throw err;
+//                 data.file = results.length;
+//             svninfo('', 'HEAD', function(err, info) {
+//                 if (err) {
+//                     data.revision = 'cannot find SVN in shell';
+//                     data.changeDate = 'cannot find SVN in shell';  
+//                 } else {
+//                     data.revision = info.revision;
+//                     data.changeDate = info.lastChangedDate;
+//                 }
+//                 data.mode = process.env.NODE_ENV;
+//                 res.send(data);
+//             });
+//         });
+//     });
+// });
+// 관리자 페이지 정보 데려오기
+
 
 //post put delete admin 아닐때 막는다
 router.all('/*', function(req, res, next) {
