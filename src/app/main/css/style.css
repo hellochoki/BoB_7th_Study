@@ -28,7 +28,7 @@ body{
 }
 
 .banner{
-	background: url(../images/main_banner1.jpg) no-repeat 0px 0px;
+	background: url(/images/dtb/main_bitcoin.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 .agileinfo-dot{
