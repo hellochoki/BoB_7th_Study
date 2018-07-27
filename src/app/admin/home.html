@@ -15,6 +15,7 @@
                 <br> ETH : {{ status.project }} 개   
                 <br> RIPPLE : {{ status.career }} 개
                 <br> NEO : {{ status.history }} 개 
+                <br><br><h1>여기에 차트가 들어갈거에요</h1>
                 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
 
             </div>
@@ -60,7 +61,7 @@
 
 
 
-            <div ng-show="{{session}}">
+            <div ng-show="{{session}}" ng-controller="coinController" ng-init="getCoin()">
 
 
 
@@ -69,10 +70,10 @@
                             <h4 class="title">환영합니다! <b>{{session.user_id}}</b> 님. </h4>
                             <p class="category">보유 코인 정보</p>
                             </p>
-                            <p><br> BITCOIN : {{ status.member }} 개
-                            <br><br> ETH : {{ status.project }} 개   
-                            <br><br> RIPPLE : {{ status.career }} 개
-                            <br><br> NEO : {{ status.history }} 개  
+                            <p><br> BITCOIN : {{ coin.bitcoin }} 개
+                            <br><br> ETH : {{ coin.eth }} 개   
+                            <br><br> RIPPLE : {{ coin.ripple }} 개
+                            <br><br> NEO : {{ coin.neo }} 개  
 
                             <br><br>     
                         </div>

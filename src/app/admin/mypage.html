@@ -1,27 +1,77 @@
 <head>
     <link href="admin/css/login.css" rel="stylesheet" />
 </head>
-<div class="login-body" ng-controller="loginController">
-    <div class="login">
-        <div class="login-screen">
-            <div class="login-app-title">
-                <h1>마이페이지</h1>
+<div class="content" ng-controller="coinController" ng-init="getCoin();getPrice()">
+<div>
+
+                    <div style="float: left; width: 60%;">
+
+                        <div class="header" style="font-size: 150%; text-align: center;">
+
+                            <h4 class="title">환영합니다! <b>{{session.user_id}}</b> 님. </h4>
+                            <p class="category">보유 코인 정보</p>
+                            </p>
+                            <p><br> BITCOIN : {{ coin.bitcoin }} 개
+                                <br><b>현재가격</b> : {{price.p_bitcoin}} 원
+                            <br><br> ETH : {{ coin.eth }} 개
+                                <br><b>현재가격</b> : {{price.p_eth}} 원
+
+                            <br><br> RIPPLE : {{ coin.ripple }} 개
+                                <br><b>현재가격</b> : {{price.p_ripple}} 원
+
+                            <br><br> NEO : {{ coin.neo }} 개  
+                                <br><b>현재가격</b> : {{price.p_neo}} 원
+
+                            <br><br> WON : {{ coin.won }} 원 
+                            </p>
+                            <br><br>     
+                            <h3>총 자산 : {{price.p_bitcoin * coin.bitcoin +price.p_ripple * coin.ripple+price.p_neo * coin.neo +price.p_eth * coin.eth + coin.won}} 원</h3>
+                        </div>
+
+                        <br><br>
+                    
+                    </div>
+
+
+                    <div style="float: right; width: 40%; padding: 10px">
+                            
+
+                        <div class="control-group" style="float: left; width: 100%; padding: 10px;margin-top: 20%">
+
+                            <div class="form-group col-md-4">
+                              <label for="exampleFormControlInput1">개수를 선택하세요</label>
+                                <input type="text" class="form-control" placeholder="개수를 입력하세요." ng-model="coin_num">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                              <label for="inputState">코인을 선택하세요</label>
+                              <select id="inputState" class="form-control" ng-model="coin_type">
+                                <option value="0">bitcoin</option>
+                                <option value="1">ripple</option>
+                                <option value="2">neo</option>
+                                <option value="3">eth</option>
+                              </select>
+                            </div>
+                        </div>
+                        
+
+
+
+                        <div class="control-group">
+                            <input type="submit" class="login-btn btn-primary btn-large" ng-click="sell()" value="매도하기" style="margin-left: 25px">
+                        </div>
+                        <div class="control-group">
+                            <input type="submit" class="login-btn btn-primary btn-large" ng-click="buy()" value="매수하기" style="margin-left: 25px">
+                        </div>
+                        <div class="control-group">
+                            <input style="text-align: center; margin-left: 25px; background-color: #e6e6e6" id="submit" class="login-btn btn-default btn-large" " onclick="setPage(0)" value="뒤로가기">
+                        </div>
+                        <div class="content table-responsive table-full-width"></div>
+
+                    </div>
+
+
+
             </div>
-            <div class="login-form">
-                <form ng-controller="loginController" ng-submit=check()>
-                    <div class="control-group">
-                        <input type="text" class="login-input" value="" ng-model="id" placeholder="아이디" id="login-name">
-                        <label class="login-field-icon fui-user" for="login-name"></label>
-                    </div>
-                    <div class="control-group">
-                        <input type="password" class="login-input" value="" ng-model="password" placeholder="비밀번호" id="login-pass">
-                        <label class="login-field-icon fui-lock" for="login-pass"></label>
-                    </div>
-                    <div class="control-group">
-                        <input type="submit" id="submit" class="login-btn btn-primary btn-large " value="로그인">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+</div>
 </div>

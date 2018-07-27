@@ -33,6 +33,7 @@ router.post('/admin/loginCheck', function(req, res ,next) {
     }).then(function(user) {
         console.log("get user data")
         if(!user) {
+
             res.redirect('/main');
         }
         var sess = req.session;
@@ -47,6 +48,55 @@ router.post('/admin/loginCheck', function(req, res ,next) {
 
     })
 });
+
+
+
+router.post('/admin/sell', function (req, res) {
+
+    models.wallet.findOne({
+        where: {
+            w_id: req.session.user.id
+        }
+    }).then(function (data) {
+        if (data != null) {
+            data.updateAttributes(req.body).then(function () {
+                res.send({
+                    error: false
+                });
+            });
+        }
+        else {
+            res.send({
+                error: true
+            });
+        }
+    });
+
+});
+
+router.post('/admin/buy', function (req, res) {
+
+    models.wallet.findOne({
+        where: {
+            w_id: req.session.id
+        }
+    }).then(function (data) {
+        if (data != null) {
+            data.updateAttributes(req.body).then(function () {
+                res.send({
+                    error: false
+                });
+            });
+        }
+        else {
+            res.send({
+                error: true
+            });
+        }
+    });
+
+});
+
 
 
 router.post('/admin/regi', function(req, res ,next) {
@@ -203,5 +253,35 @@ var walk = function(dir, done) {
         })();
     });
 };
+
+
+ 
+router.get('/admin/getCoin', function(req, res ,next) {
+    console.log("coin check!"+ req.session.user);
+
+    models.wallet.findOne({
+        where: {
+            w_id: req.session.user.id
+        }
+    }).then(function(coin) {
+        console.log(coin.dataValues);
+        res.send(coin.dataValues);
+    })
+});
+
+
+router.get('/admin/getPrice', function(req, res ,next) {
+    console.log("price check!");
+
+    models.price.findOne({
+        where: {
+ 
+        },order: [ [ 'id', 'DESC' ]]
+    }).then(function(price) {
+        console.log(price.dataValues);
+        res.send(price.dataValues);
+    })
+});
+
 
 module.exports = router;

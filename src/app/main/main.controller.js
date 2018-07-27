@@ -476,14 +476,151 @@ var projectController = function($scope, $http) {
     getData();
 }
 
-var applyController = function($scope, $http) {
-    $http.get("apply/status").success(function(data) {
-        $scope.applyData = data;
-        console.log(data);
-    })
-    .error(function() {
-        $scope.data = "error in fetching data";
-    });
+var coinController = function($scope, $http) {
+
+
+    $scope.getCoin = function() {
+        $http.get("/admin/getCoin").then(function(res) {
+            if (res.data.error) {
+                console.log(res.data);
+                $scope.coin.bitcoin = "undefined";
+                $scope.coin.eth = "undefined";
+                $scope.coin.ripple = "undefined";
+                $scope.coin.neo = "undefined";
+                $scope.coin.won = "undefined";
+            } else {
+                $scope.coin = res.data;
+            }
+        });
+    }
+
+
+    $scope.getPrice = function() {
+        $http.get("/admin/getPrice").then(function(res) {
+            if (res.data.error) {
+                console.log(res.data);
+                $scope.price.bitcoin = "undefined";
+                $scope.price.eth = "undefined";
+                $scope.price.ripple = "undefined";
+                $scope.price.neo = "undefined";
+
+            } else {
+                $scope.price = res.data;
+            }
+        });
+    }
+
+    
+
+    $scope.sell = function() {
+        console.log("sell start!!!!!!!!" + $scope.coin_type + $scope.coin_num);
+        
+        if($scope.coin_type == 0 ){
+
+            if($scope.coin.bitcoin - $scope.coin_num >= 0){
+
+            
+                    $scope.coin.bitcoin = $scope.coin.bitcoin - $scope.coin_num;
+
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_bitcoin;
+
+                
+                console.log("ANSWER : "+ $scope.coin.won);
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+
+        }
+        else if($scope.coin_type = 1 ){
+
+            if($scope.coin.ripple - $scope.coin_num >= 0){
+
+            
+                    $scope.coin.ripple = $scope.coin.ripple - $scope.coin_num;
+
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_ripple;
+
+                
+                console.log("ANSWER : "+ $scope.coin.won);
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+        }
+        else if($scope.coin_type = 2 ){
+
+            if($scope.coin.neo - $scope.coin_num >= 0){
+
+            
+                    $scope.coin.neo = $scope.coin.neo - $scope.coin_num;
+
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_neo;
+
+                
+                console.log("ANSWER : "+ $scope.coin.won);
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+        }
+        else if($scope.coin_type = 3 ){
+
+            if($scope.coin.eth - $scope.coin_num >= 0){
+
+            
+                    $scope.coin.eth = $scope.coin.eth - $scope.coin_num;
+
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_eth;
+
+                
+                console.log("ANSWER : "+ $scope.coin.won);
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+        }
+        else{
+            alert('수량을 확인해 주세요');
+            window.location.reload(true);
+        }
+
+
+        $http.post("/admin/sell", {
+            bitcoin: $scope.coin.bitcoin,
+            ripple: $scope.coin.ripple,
+            neo: $scope.coin.neo,
+            eth: $scope.coin.eth,
+            won: $scope.coin.won
+        }).then(function(res){
+            console.log(res.data);
+            if (res.data.error) {
+                console.log(res.data.error);
+                alert('에러가 발생하였습니다');
+                window.location.reload(true);
+            } else {
+                alert("거래가 정상적으로 처리되었습니다.");
+                window.location.reload(true);
+            }
+        });
+    }
+
+    
+
+
+
 }
 
 function makeProjectPages(data) {
@@ -557,7 +694,7 @@ angular.module('dtb').controller('membersController', membersController);
 angular.module('dtb').controller('projectController', projectController);
 angular.module('dtb').controller('historyController', historyController);
 angular.module('dtb').controller('loginController', loginController);
-angular.module('dtb').controller('applyController', applyController);
+angular.module('dtb').controller('coinController', coinController);
 angular.module('dtb').controller('regiController', regiController);
 
 
