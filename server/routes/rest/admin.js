@@ -78,7 +78,7 @@ router.post('/admin/buy', function (req, res) {
 
     models.wallet.findOne({
         where: {
-            w_id: req.session.id
+            w_id: req.session.user.id
         }
     }).then(function (data) {
         if (data != null) {

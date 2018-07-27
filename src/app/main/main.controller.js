@@ -525,7 +525,7 @@ var coinController = function($scope, $http) {
                      $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_bitcoin;
 
                 
-                console.log("ANSWER : "+ $scope.coin.won);
+                     console.log("sell bitcoin : "+$scope.coin.bitcoin );
 
             }
             else{
@@ -535,7 +535,7 @@ var coinController = function($scope, $http) {
 
 
         }
-        else if($scope.coin_type = 1 ){
+        else if($scope.coin_type == 1 ){
 
             if($scope.coin.ripple - $scope.coin_num >= 0){
 
@@ -545,7 +545,7 @@ var coinController = function($scope, $http) {
                      $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_ripple;
 
                 
-                console.log("ANSWER : "+ $scope.coin.won);
+                     console.log("sell ripple : "+$scope.coin.ripple );
 
             }
             else{
@@ -554,7 +554,7 @@ var coinController = function($scope, $http) {
             }
 
         }
-        else if($scope.coin_type = 2 ){
+        else if($scope.coin_type == 2 ){
 
             if($scope.coin.neo - $scope.coin_num >= 0){
 
@@ -564,7 +564,7 @@ var coinController = function($scope, $http) {
                      $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_neo;
 
                 
-                console.log("ANSWER : "+ $scope.coin.won);
+                     console.log("sell neo : "+$scope.coin.neo );
 
             }
             else{
@@ -573,7 +573,7 @@ var coinController = function($scope, $http) {
             }
 
         }
-        else if($scope.coin_type = 3 ){
+        else if($scope.coin_type == 3 ){
 
             if($scope.coin.eth - $scope.coin_num >= 0){
 
@@ -583,7 +583,7 @@ var coinController = function($scope, $http) {
                      $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_eth;
 
                 
-                console.log("ANSWER : "+ $scope.coin.won);
+                     console.log("sell eth : "+$scope.coin.eth );
 
             }
             else{
@@ -599,6 +599,112 @@ var coinController = function($scope, $http) {
 
 
         $http.post("/admin/sell", {
+            bitcoin: $scope.coin.bitcoin,
+            ripple: $scope.coin.ripple,
+            neo: $scope.coin.neo,
+            eth: $scope.coin.eth,
+            won: $scope.coin.won
+        }).then(function(res){
+            console.log(res.data);
+            if (res.data.error) {
+                console.log(res.data.error);
+                alert('에러가 발생하였습니다');
+                window.location.reload(true);
+            } else {
+                alert("거래가 정상적으로 처리되었습니다.");
+                window.location.reload(true);
+            }
+        });
+    }
+
+
+    $scope.buy = function() {
+        console.log("buy start!!!!!!!!" + $scope.coin_type + $scope.coin_num);
+        
+        if($scope.coin_type == 0 ){
+
+            if($scope.coin.won - $scope.coin_num * $scope.price.p_bitcoin >= 0){
+
+            
+                    $scope.coin.bitcoin = Number($scope.coin.bitcoin) + Number($scope.coin_num);
+
+                     $scope.coin.won = $scope.coin.won -  $scope.coin_num * $scope.price.p_bitcoin;
+
+                
+                     console.log("buy bitcoin : "+$scope.coin.bitcoin );
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+
+        }
+        else if($scope.coin_type == 1 ){
+
+            if($scope.coin.won -  $scope.coin_num * $scope.price.p_ripple >= 0){
+
+            
+                    $scope.coin.ripple = Number($scope.coin.ripple) + Number($scope.coin_num);
+
+                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_ripple;
+
+                
+                     console.log("buy ripple : "+$scope.coin.ripple );
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+        }
+        else if($scope.coin_type == 2 ){
+
+            if($scope.coin.won -  $scope.coin_num * $scope.price.p_neo >= 0){
+
+            
+                    $scope.coin.neo = Number($scope.coin.neo) + Number($scope.coin_num);
+
+                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_neo;
+
+                
+                     console.log("buy neo : "+$scope.coin.neo );
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+        }
+        else if($scope.coin_type == 3 ){
+
+            if($scope.coin.won -  $scope.coin_num * $scope.price.p_eth >= 0){
+
+            
+                    $scope.coin.eth = Number($scope.coin.eth) + Number($scope.coin_num);
+
+                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_eth;
+
+                
+                console.log("buy eth : "+$scope.coin.eth );
+
+            }
+            else{
+                alert('수량을 확인해 주세요');
+                 window.location.reload(true);
+            }
+
+        }
+        else{
+            alert('수량을 확인해 주세요');
+            window.location.reload(true);
+        }
+
+
+        $http.post("/admin/buy", {
             bitcoin: $scope.coin.bitcoin,
             ripple: $scope.coin.ripple,
             neo: $scope.coin.neo,
