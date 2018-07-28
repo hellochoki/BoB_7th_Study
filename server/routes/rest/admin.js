@@ -270,6 +270,32 @@ router.get('/admin/getCoin', function(req, res ,next) {
 });
 
 
+router.get('/admin/getChart', function(req, res ,next) {
+    console.log("chart check!"+ req.session.user);
+
+    models.price.findAll({
+    limit: 7,
+    order: [ [ 'id', 'DESC' ]]
+    }).then(function(boardSvArr) {
+        var boardCliArr = [];
+        boardSvArr.forEach(function (board) {
+            var boardCli = {
+                id: board.id,
+                p_bitcoin: board.p_bitcoin,
+                p_eth: board.p_eth,
+                p_neo: board.p_neo,
+                p_ripple: board.p_ripple,
+                createdAt: board.createdAt
+            };
+
+            boardCliArr.push(boardCli);
+        });
+        res.contentType('application/json');
+        res.send(boardCliArr);
+    })
+});
+
+
 router.get('/admin/getPrice', function(req, res ,next) {
     console.log("price check!");
 

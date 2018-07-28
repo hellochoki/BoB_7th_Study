@@ -1,22 +1,23 @@
 <head>
             <link href="admin/css/login.css" rel="stylesheet" />
+
 </head>
 
-<div class="content">
+
+<div class="content" ng-controller="loginController" ng-init="getChart()">
 
 
-    <div class="col-md-9">
+    <div class="col-md-8">
 
             <div class="header">
                 <h4 class="title">차트 페이지 </h4>
-                <p class="category">현재 상태</p>
-                </p>
-                <p> BITCOIN : {{ status.member }} 명
-                <br> ETH : {{ status.project }} 개   
-                <br> RIPPLE : {{ status.career }} 개
-                <br> NEO : {{ status.history }} 개 
-                <br><br><h1>여기에 차트가 들어갈거에요</h1>
-                <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+                
+
+                <canvas id="line" class="chart chart-line" chart-data="data"
+chart-labels="labels" chart-series="series" chart-options="options"
+chart-dataset-override="datasetOverride" chart-click="onClick">
+</canvas>
+
 
             </div>
             <div class="content table-responsive table-full-width"></div>
@@ -61,7 +62,7 @@
 
 
 
-            <div ng-show="{{session}}" ng-controller="coinController" ng-init="getCoin()">
+            <div ng-show="{{session}}" ng-controller="coinController" ng-init="getCoin(); getChart();">
 
 
 
@@ -109,3 +110,5 @@
 }
 
 </style>
+
+

@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
 		won: {
 			type: DataTypes.INTEGER(11),
 			allowNull: true,
-			defaultValue : 0
+			defaultValue : 100000
 		},
 	    createdAt: {
 	        type: 'TIMESTAMP',

@@ -217,6 +217,77 @@ function downloadImg() {
 
 var adminController = function ($scope, $http, $location) {
 
+    $http.get("/session").success(function (data) {
+        $scope.session = null;
+        $scope.session = data;
+    });
+
+    $scope.session = function () {
+        
+        $http.get("/session").success(function (data) {
+        $scope.session = null;
+        $scope.session = data;
+        });
+
+    }
+
+    $scope.getChart = function() {
+        $http.get("/admin/getChart").then(function(res) {
+            if (res.data.error) {
+                console.log(res.data);
+            } else {
+                $scope.chart = res.data;
+                console.log($scope.chart[0].id);
+                console.log($scope.chart[1].id);
+                console.log($scope.chart[2].id);
+                console.log($scope.chart[3].id);
+                console.log($scope.chart[4].id);
+                console.log($scope.chart[5].id);
+                console.log($scope.chart[6].id);
+                $scope.labels = [$scope.chart[0].createdAt, $scope.chart[1].createdAt, $scope.chart[2].createdAt, $scope.chart[3].createdAt, $scope.chart[4].createdAt,$scope.chart[5].createdAt , $scope.chart[6].createdAt]
+                $scope.data = [
+                [$scope.chart[0].p_bitcoin, $scope.chart[1].p_bitcoin, $scope.chart[2].p_bitcoin, $scope.chart[3].p_bitcoin, $scope.chart[4].p_bitcoin,$scope.chart[5].p_bitcoin , $scope.chart[6].p_bitcoin],
+                [$scope.chart[0].p_eth, $scope.chart[1].p_eth, $scope.chart[2].p_eth, $scope.chart[3].p_eth, $scope.chart[4].p_eth,$scope.chart[5].p_eth , $scope.chart[6].p_eth],
+                [$scope.chart[0].p_ripple, $scope.chart[1].p_ripple, $scope.chart[2].p_ripple, $scope.chart[3].p_ripple, $scope.chart[4].p_ripple,$scope.chart[5].p_ripple , $scope.chart[6].p_ripple],
+                [$scope.chart[0].p_eth, $scope.chart[1].p_eth, $scope.chart[2].p_eth, $scope.chart[3].p_eth, $scope.chart[4].p_eth,$scope.chart[5].p_eth , $scope.chart[6].p_eth]
+
+                ]
+
+            }
+        });
+    } 
+
+
+  // $scope.labels = ["January", "February", "March", "April", "May", "June", "july"];
+   // $scope.labels = [$scope.chart[0].createdAt, $scope.chart[1].createdAt, $scope.chart[2].createdAt, $scope.chart[3].createdAt, $scope.chart[4].createdAt,$scope.chart[5].createdAt , $scope.chart[6].createdAt];
+  $scope.series = ['Series A', 'Series B'];
+  $scope.data = [
+    [65, 59, 80, 81, 56, 55, 40],
+    [28, 48, 40, 19, 86, 27, 90]
+  ];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+  $scope.options = {
+    scales: {
+      yAxes: [
+        {
+          id: 'y-axis-1',
+          type: 'linear',
+          display: true,
+          position: 'left'
+        },
+        {
+          id: 'y-axis-2',
+          type: 'linear',
+          display: true,
+          position: 'right'
+        }
+      ]
+    }
+  };
+
     $scope.setPage = function (data) {
         switch (data) {
             case 0:
@@ -246,10 +317,7 @@ var adminController = function ($scope, $http, $location) {
         $scope.status = data;
     });
 
-    $http.get("/session").success(function (data) {
-        $scope.session = null;
-        $scope.session = data;
-    });
+
 
 
     $scope.setPage(0);

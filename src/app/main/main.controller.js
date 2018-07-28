@@ -478,6 +478,28 @@ var projectController = function($scope, $http) {
 
 var coinController = function($scope, $http) {
 
+    // $scope.getChart = function() {
+    //     $http.get("/admin/getChart").then(function(res) {
+    //         if (res.data.error) {
+    //             console.log(res.data);
+    //         } else {
+    //             $scope.chart = res.data;
+    //             console.log($scope.chart[0].id);
+    //             console.log($scope.chart[1].id);
+    //             console.log($scope.chart[2].id);
+    //             console.log($scope.chart[3].id);
+    //             console.log($scope.chart[4].id);
+    //             console.log($scope.chart[5].id);
+    //             console.log($scope.chart[6].id);
+    //             $scope.labels = [$scope.chart[0].createdAt, $scope.chart[1].createdAt, $scope.chart[2].createdAt, $scope.chart[3].createdAt, $scope.chart[4].createdAt,$scope.chart[5].createdAt , $scope.chart[6].createdAt]
+    //             // $scope.data[0] = $scope.chart.p_bitcoin;
+    //             // $scope.data[1] = $scope.chart.p_eth;
+    //             // $scope.data[2] = $scope.chart.p_neo;
+    //             // $scope.data[3] = $scope.chart.p_ripple;
+
+    //         }
+    //     });
+    // } 
 
     $scope.getCoin = function() {
         $http.get("/admin/getCoin").then(function(res) {
