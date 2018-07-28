@@ -225,7 +225,7 @@ router.all('/*', function(req, res, next) {
 //api list
 function checkUrl(url) {
     if (url.includes('/history') || url.includes('/career') || url.includes('/members') || url.includes('/projects') || url.includes('/files'))
-        return 1;
+        {return 1;}
     return 0;
 }
 
@@ -271,11 +271,9 @@ router.get('/admin/getCoin', function(req, res ,next) {
 
 
 router.get('/admin/getChart', function(req, res ,next) {
-    console.log("chart check!"+ req.session.user);
-
     models.price.findAll({
     limit: 7,
-    order: [ [ 'id', 'DESC' ]]
+    order: [[ 'id', 'DESC' ]]
     }).then(function(boardSvArr) {
         var boardCliArr = [];
         boardSvArr.forEach(function (board) {
@@ -291,7 +289,7 @@ router.get('/admin/getChart', function(req, res ,next) {
             boardCliArr.push(boardCli);
         });
         res.contentType('application/json');
-        res.send(boardCliArr);
+        res.send(boardCliArr);  
     })
 });
 

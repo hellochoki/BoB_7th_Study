@@ -237,13 +237,13 @@ var adminController = function ($scope, $http, $location) {
                 console.log(res.data);
             } else {
                 $scope.chart = res.data;
-                console.log($scope.chart[0].id);
-                console.log($scope.chart[1].id);
-                console.log($scope.chart[2].id);
-                console.log($scope.chart[3].id);
-                console.log($scope.chart[4].id);
-                console.log($scope.chart[5].id);
-                console.log($scope.chart[6].id);
+                
+                    $scope.labels = ["January", "February", "March", "April", "May", "June", "july"];
+                    $scope.data = [
+                                        [65, 59, 80, 81, 56, 55, 40],
+                                        [28, 48, 40, 19, 86, 27, 90]
+                                      ];
+                if($scope.chart[0].id != null){
                 $scope.labels = [$scope.chart[0].createdAt, $scope.chart[1].createdAt, $scope.chart[2].createdAt, $scope.chart[3].createdAt, $scope.chart[4].createdAt,$scope.chart[5].createdAt , $scope.chart[6].createdAt]
                 $scope.data = [
                 [$scope.chart[0].p_bitcoin, $scope.chart[1].p_bitcoin, $scope.chart[2].p_bitcoin, $scope.chart[3].p_bitcoin, $scope.chart[4].p_bitcoin,$scope.chart[5].p_bitcoin , $scope.chart[6].p_bitcoin],
@@ -251,7 +251,8 @@ var adminController = function ($scope, $http, $location) {
                 [$scope.chart[0].p_ripple, $scope.chart[1].p_ripple, $scope.chart[2].p_ripple, $scope.chart[3].p_ripple, $scope.chart[4].p_ripple,$scope.chart[5].p_ripple , $scope.chart[6].p_ripple],
                 [$scope.chart[0].p_eth, $scope.chart[1].p_eth, $scope.chart[2].p_eth, $scope.chart[3].p_eth, $scope.chart[4].p_eth,$scope.chart[5].p_eth , $scope.chart[6].p_eth]
 
-                ]
+                ];}
+            
 
             }
         });
@@ -261,10 +262,10 @@ var adminController = function ($scope, $http, $location) {
   // $scope.labels = ["January", "February", "March", "April", "May", "June", "july"];
    // $scope.labels = [$scope.chart[0].createdAt, $scope.chart[1].createdAt, $scope.chart[2].createdAt, $scope.chart[3].createdAt, $scope.chart[4].createdAt,$scope.chart[5].createdAt , $scope.chart[6].createdAt];
   $scope.series = ['Series A', 'Series B'];
-  $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
-  ];
+  // $scope.data = [
+  //   [65, 59, 80, 81, 56, 55, 40],
+  //   [28, 48, 40, 19, 86, 27, 90]
+  // ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
