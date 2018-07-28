@@ -18,10 +18,10 @@
         controller: 'adminController',
         templateUrl: 'app/admin/main.html'
       })
-      .state('login', {
-        url: 'admin/login',
-        templateUrl: 'app/admin/login.html'
-      })
+      // .state('login', {
+      //   url: 'admin/login',
+      //   templateUrl: 'app/admin/login.html'
+      // })
       // .state('refund', {
       //   url: '/refund',
       //   templateUrl: 'app/admin/refund.html'

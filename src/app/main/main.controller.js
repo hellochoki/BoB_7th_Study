@@ -537,7 +537,7 @@ var coinController = function($scope, $http) {
     $scope.sell = function() {
         console.log("sell start!!!!!!!!" + $scope.coin_type + $scope.coin_num);
         
-        if($scope.coin_type == 0 ){
+        if($scope.coin_type == 0 && $scope.coin_num > 0 ){
 
             if($scope.coin.bitcoin - $scope.coin_num >= 0){
 
@@ -557,7 +557,7 @@ var coinController = function($scope, $http) {
 
 
         }
-        else if($scope.coin_type == 1 ){
+        else if($scope.coin_type == 1 && $scope.coin_num > 0  ){
 
             if($scope.coin.ripple - $scope.coin_num >= 0){
 
@@ -576,7 +576,7 @@ var coinController = function($scope, $http) {
             }
 
         }
-        else if($scope.coin_type == 2 ){
+        else if($scope.coin_type == 2 && $scope.coin_num > 0  ){
 
             if($scope.coin.neo - $scope.coin_num >= 0){
 
@@ -595,7 +595,7 @@ var coinController = function($scope, $http) {
             }
 
         }
-        else if($scope.coin_type == 3 ){
+        else if($scope.coin_type == 3 && $scope.coin_num > 0  ){
 
             if($scope.coin.eth - $scope.coin_num >= 0){
 
@@ -633,7 +633,7 @@ var coinController = function($scope, $http) {
                 alert('에러가 발생하였습니다');
                 window.location.reload(true);
             } else {
-                alert("거래가 정상적으로 처리되었습니다.");
+                alert("처리되었습니다");
                 window.location.reload(true);
             }
         });
@@ -643,7 +643,7 @@ var coinController = function($scope, $http) {
     $scope.buy = function() {
         console.log("buy start!!!!!!!!" + $scope.coin_type + $scope.coin_num);
         
-        if($scope.coin_type == 0 ){
+        if($scope.coin_type == 0 && $scope.coin_num > 0  ){
 
             if($scope.coin.won - $scope.coin_num * $scope.price.p_bitcoin >= 0){
 
@@ -663,7 +663,7 @@ var coinController = function($scope, $http) {
 
 
         }
-        else if($scope.coin_type == 1 ){
+        else if($scope.coin_type == 1 && $scope.coin_num > 0  ){
 
             if($scope.coin.won -  $scope.coin_num * $scope.price.p_ripple >= 0){
 
@@ -682,7 +682,7 @@ var coinController = function($scope, $http) {
             }
 
         }
-        else if($scope.coin_type == 2 ){
+        else if($scope.coin_type == 2 && $scope.coin_num > 0  ){
 
             if($scope.coin.won -  $scope.coin_num * $scope.price.p_neo >= 0){
 
@@ -701,7 +701,7 @@ var coinController = function($scope, $http) {
             }
 
         }
-        else if($scope.coin_type == 3 ){
+        else if($scope.coin_type == 3 && $scope.coin_num > 0  ){
 
             if($scope.coin.won -  $scope.coin_num * $scope.price.p_eth >= 0){
 
@@ -739,7 +739,7 @@ var coinController = function($scope, $http) {
                 alert('에러가 발생하였습니다');
                 window.location.reload(true);
             } else {
-                alert("거래가 정상적으로 처리되었습니다.");
+                alert("처리되었습니다!");
                 window.location.reload(true);
             }
         });
