@@ -311,6 +311,14 @@ var adminController = function ($scope, $http, $location) {
                 $scope.url = 'app/admin/privacy.html';
                 $scope.title = '개인정보';
                 break;
+            case 5:
+                $scope.url = 'app/admin/level.html';
+                $scope.title = '등급제도';
+                break;
+            case 6:
+                $scope.url = 'app/admin/fee.html';
+                $scope.title = '수수료제도';
+                break;
             
         }
         $scope.page = data;
