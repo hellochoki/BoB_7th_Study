@@ -544,7 +544,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.bitcoin = $scope.coin.bitcoin - $scope.coin_num;
 
-                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_bitcoin;
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_bitcoin * 0.9992;
 
                 
                      console.log("sell bitcoin : "+$scope.coin.bitcoin );
@@ -564,7 +564,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.ripple = $scope.coin.ripple - $scope.coin_num;
 
-                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_ripple;
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_ripple * 0.9992;
 
                 
                      console.log("sell ripple : "+$scope.coin.ripple );
@@ -583,7 +583,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.neo = $scope.coin.neo - $scope.coin_num;
 
-                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_neo;
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_neo * 0.9992;
 
                 
                      console.log("sell neo : "+$scope.coin.neo );
@@ -602,7 +602,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.eth = $scope.coin.eth - $scope.coin_num;
 
-                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_eth;
+                     $scope.coin.won =$scope.coin.won +  $scope.coin_num * $scope.price.p_eth * 0.9992;
 
                 
                      console.log("sell eth : "+$scope.coin.eth );
@@ -650,7 +650,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.bitcoin = Number($scope.coin.bitcoin) + Number($scope.coin_num);
 
-                     $scope.coin.won = $scope.coin.won -  $scope.coin_num * $scope.price.p_bitcoin;
+                     $scope.coin.won = $scope.coin.won -  $scope.coin_num * $scope.price.p_bitcoin * 1.008;
 
                 
                      console.log("buy bitcoin : "+$scope.coin.bitcoin );
@@ -670,7 +670,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.ripple = Number($scope.coin.ripple) + Number($scope.coin_num);
 
-                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_ripple;
+                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_ripple  * 1.008;
 
                 
                      console.log("buy ripple : "+$scope.coin.ripple );
@@ -689,7 +689,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.neo = Number($scope.coin.neo) + Number($scope.coin_num);
 
-                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_neo;
+                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_neo  * 1.008;
 
                 
                      console.log("buy neo : "+$scope.coin.neo );
@@ -708,7 +708,7 @@ var coinController = function($scope, $http) {
             
                     $scope.coin.eth = Number($scope.coin.eth) + Number($scope.coin_num);
 
-                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_eth;
+                     $scope.coin.won =$scope.coin.won -  $scope.coin_num * $scope.price.p_eth  * 1.008;
 
                 
                 console.log("buy eth : "+$scope.coin.eth );
