@@ -12,24 +12,24 @@
                             <p class="category">보유 코인 정보</p>
                             </p>
                             <p><br> BITCOIN : {{ coin.bitcoin }} 개
-                                <br><b>현재가격</b> : {{price.p_bitcoin}} 원
+                                <br><b>현재가격</b> : {{price.p_bitcoin}} ￦
 
                             <br><br> RIPPLE : {{ coin.ripple }} 개
-                                <br><b>현재가격</b> : {{price.p_ripple}} 원
+                                <br><b>현재가격</b> : {{price.p_ripple}} ￦
 
                             <br><br> NEO : {{ coin.neo }} 개  
-                                <br><b>현재가격</b> : {{price.p_neo}} 원
+                                <br><b>현재가격</b> : {{price.p_neo}} ￦
 
                                 
                             <br><br> ETH : {{ coin.eth }} 개
-                                <br><b>현재가격</b> : {{price.p_eth}} 원
+                                <br><b>현재가격</b> : {{price.p_eth}} ￦
 
                             
 
-                            <br><br> WON : {{ coin.won }} 원 
+                            <br><br> WON : {{ coin.won }} ￦ 
                             </p>
                             <br><br>     
-                            <h3>총 자산 : {{price.p_bitcoin * coin.bitcoin +price.p_ripple * coin.ripple+price.p_neo * coin.neo +price.p_eth * coin.eth + coin.won}} 원</h3>
+                            <h3>총 자산 : {{price.p_bitcoin * coin.bitcoin +price.p_ripple * coin.ripple+price.p_neo * coin.neo +price.p_eth * coin.eth + coin.won}} ￦ </h3>
                         </div>
 
                         <br><br>
@@ -42,10 +42,7 @@
 
                         <div class="control-group" style="float: left; width: 100%; padding: 10px;margin-top: 20%">
 
-                            <div class="form-group col-md-4">
-                              <label for="exampleFormControlInput1">개수를 선택하세요</label>
-                                <input type="number" class="form-control" placeholder="개수를 입력하세요." ng-model="coin_num">
-                            </div>
+                            
 
                             <div class="form-group col-md-4">
                               <label for="inputState">코인을 선택하세요</label>
@@ -55,6 +52,11 @@
                                 <option value="2">neo</option>
                                 <option value="3">eth</option>
                               </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                              <label for="exampleFormControlInput1">개수를 선택하세요</label>
+                                <input type="number" class="form-control" placeholder="개수를 입력하세요." ng-model="coin_num">
                             </div>
                         </div>
                         

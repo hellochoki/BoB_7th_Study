@@ -261,7 +261,7 @@ var adminController = function ($scope, $http, $location) {
 
   // $scope.labels = ["January", "February", "March", "April", "May", "June", "july"];
    // $scope.labels = [$scope.chart[0].createdAt, $scope.chart[1].createdAt, $scope.chart[2].createdAt, $scope.chart[3].createdAt, $scope.chart[4].createdAt,$scope.chart[5].createdAt , $scope.chart[6].createdAt];
-  $scope.series = ['Series A', 'Series B'];
+  $scope.series = ['Bitcoin', 'Ethereum','Ripple','Neo'];
   // $scope.data = [
   //   [65, 59, 80, 81, 56, 55, 40],
   //   [28, 48, 40, 19, 86, 27, 90]
@@ -302,6 +302,14 @@ var adminController = function ($scope, $http, $location) {
             case 2:
                 $scope.url = 'app/admin/mypage.html';
                 $scope.title = '내 계좌';
+                break;
+            case 3:
+                $scope.url = 'app/admin/group.html';
+                $scope.title = '조직구성도';
+                break;
+            case 4:
+                $scope.url = 'app/admin/privacy.html';
+                $scope.title = '개인정보';
                 break;
             
         }
