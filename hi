@@ -1,0 +1,9 @@
+service hi
+{
+	disable = no
+	flags = REUSE
+	socket_type = stream
+	wait = no
+	user = root
+	server = /root/Desktop/docker/hi
+}
