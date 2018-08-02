@@ -5,5 +5,5 @@ service hi
 	socket_type = stream
 	wait = no
 	user = root
-	server = /root/Desktop/docker/hi
+	server = /var/run/hi/hi_
 }
