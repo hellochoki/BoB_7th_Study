@@ -138,30 +138,6 @@ int main(int argc, char* argv[]){
 
 	memcpy(packet, &arp_pk, sizeof(arp_pk));
 
-	 //  u_char packet[100];
-		// packet[0]=1;
-	 //    packet[1]=1;
-	 //    packet[2]=1;
-	 //    packet[3]=1;
-	 //    packet[4]=1;
-	 //    packet[5]=1;
-	    
-	 //    /* set mac source to 2:2:2:2:2:2 */
-	 //    packet[6]=2;
-	 //    packet[7]=2;
-	 //    packet[8]=2;
-	 //    packet[9]=2;
-	 //    packet[10]=2;
-	 //    packet[11]=2;
-	    
-	 //    /* Fill the rest of the packet */
-	 //    for(i=12;i<100;i++)
-	 //    {
-	 //        packet[i]=i%256;
-	 //    }
-
-
-
 	char* dev = argv[1];
 
 	handle = pcap_open_live(dev, BUFSIZ, 1, 1000, errbuf);
@@ -179,7 +155,6 @@ int main(int argc, char* argv[]){
 			fprintf(stderr, "\nError sending the packet! : %s\n", pcap_geterr(handle));
 
 	// 하나 보내고 이제 남은 packet 값지정? 다시 해줘야댐
-
 
 
 	while (true) {
