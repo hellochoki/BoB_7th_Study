@@ -6,7 +6,6 @@
 #include<pcap.h>
 #include<memory.h>
 
-// 타입 맞춰주려고 일단 걍 박음..
 #define ETH_HW_ADDR_LEN 6
 #define IP_ADDR_LEN     4
 #define ARP_FRAME_TYPE  0x0806
