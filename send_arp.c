@@ -6,6 +6,7 @@
 #include<pcap.h>
 #include<memory.h>
 
+// 타입 맞춰주려고 일단 걍 박음..
 #define ETH_HW_ADDR_LEN 6
 #define IP_ADDR_LEN     4
 #define ARP_FRAME_TYPE  0x0806
@@ -177,7 +178,6 @@ int main(int argc, char* argv[]){
     }
     
 
-
     printf("\n!\n");
     printf("Eth Source : %0.2x:%0.2x:%0.2x:%0.2x:%0.2x:%0.2x \n",eth[0][0],eth[0][1],eth[0][2],eth[0][3],eth[0][4],eth[0][5]);
     printf("Eth Destination : %0.2x:%0.2x:%0.2x:%0.2x:%0.2x:%0.2x \n",eth[1][0],eth[1][1],eth[1][2],eth[1][3],eth[1][4],eth[1][5]);
@@ -187,10 +187,6 @@ int main(int argc, char* argv[]){
     	printf("TARGET_IP : %0.2x.%0.2x.%0.2x.%0.2x \n",packet2[26],packet2[27],packet2[28],packet2[29]);
     	printf("TARGET_MAC : %0.2x:%0.2x:%0.2x:%0.2x:%0.2x:%0.2x \n",packet2[6],packet2[7],packet2[8],packet2[9],packet2[10],packet2[11]);
 
-
-    // if(eth[2][0]==0x08 && eth[2][1]==0x06 && packet2[26] == arp_pk.TARGET_IP[0] && packet2[27] == arp_pk.TARGET_IP[1] && packet2[28] == arp_pk.TARGET_IP[2] && packet2[29] == arp_pk.TARGET_IP[3] )
-    // {
-    // 	printf("FIND!!!!!!");
 
 
 	  	// 새로운 ARP 스푸핑 위하여
@@ -214,7 +210,7 @@ int main(int argc, char* argv[]){
 
 
     break;
-    // } // 이거랑 src ip 가 같으면 break
+ 
 
 
   }
