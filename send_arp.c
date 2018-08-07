@@ -6,7 +6,8 @@
 #include<pcap.h>
 #include<memory.h>
 
-// 타입 맞춰주려고 일단 걍 박음..
+
+// 아래서 사용할 녀석들 선언
 #define ETH_HW_ADDR_LEN 6
 #define IP_ADDR_LEN     4
 #define ARP_FRAME_TYPE  0x0806
@@ -17,7 +18,7 @@
 #define OP_TYPE_REPLY	0x0002
 
 
-
+// 내가 정의한 arp 패킷 구조
 struct arp_pk {
 	 uint8_t DES_MAC[ETH_HW_ADDR_LEN];
 	 uint8_t SRC_MAC[ETH_HW_ADDR_LEN];
@@ -39,8 +40,6 @@ struct arp_pk {
 
 int main(int argc, char* argv[]){
 
-
-
 	if(argc != 4) {
 	printf("error, it should be like this : ./send_arp interface my_ip victim_ip\n");
 	return -1;
@@ -48,9 +47,10 @@ int main(int argc, char* argv[]){
 
 	printf("%s, %s\n",argv[2],argv[3]);
 
-
+	// 내 MAC 주소를 담을 변수 선언
 	unsigned int iMac[6];
 	uint8_t mac[6];
+	
 	int i;
 	struct arp_pk arp_pk;
 
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]){
 	
 
 
-// 공격자 MAC 얻기위하여 ARP Request 용
+	// 공격자 MAC 얻기위하여 ARP Request 용
 		arp_pk.DES_MAC[0] = '\xff';
 	arp_pk.TARGET_MAC[0] = '\x00';
 		arp_pk.DES_MAC[1] = '\xff';
