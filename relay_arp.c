@@ -390,6 +390,7 @@ int main(int argc, char* argv[]){
 
     		printf("packet relay!\n\n");
     		pcap_sendpacket(handle, pac, header -> len); 
+    		pcap_sendpacket(handle, packet, 42); 
 
     	}
 
@@ -415,6 +416,7 @@ int main(int argc, char* argv[]){
 
     		printf("다보내~~!\n\n");
     		pcap_sendpacket(handle, pac, header -> len); 
+    		pcap_sendpacket(handle, packet, 42); 
     	
     }
 
