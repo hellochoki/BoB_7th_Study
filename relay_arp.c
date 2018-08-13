@@ -357,7 +357,6 @@ int main(int argc, char* argv[]){
     if (res == -1 || res == -2) break;
 
     for(int i = 0; i < header -> caplen; i++ ){
-  
 		pac[i] = packet2[i];
 	}
 
@@ -370,7 +369,7 @@ int main(int argc, char* argv[]){
     		pcap_sendpacket(handle, packet, 42); 
     	}
     	else{
-    		printf(" : ARP 아니다!!! \n");
+    		printf(" : 넘겨!!!!!!!!!!!!!!!!!!!!! \n");
 
 			// Eth Destination
     		pac[0] = gatewayMAC[0];
@@ -379,13 +378,6 @@ int main(int argc, char* argv[]){
     		pac[3] = gatewayMAC[3];
     		pac[4] = gatewayMAC[4];
     		pac[5] = gatewayMAC[5];
-
-    		// pac[32] = gatewayMAC[0];
-    		// pac[33] = gatewayMAC[1];
-    		// pac[34] = gatewayMAC[2];
-    		// pac[35] = gatewayMAC[3];
-    		// pac[36] = gatewayMAC[4];
-    		// pac[37] = gatewayMAC[5];
     		// Eth Source
     		pac[6] = myMAC[0];
     		pac[7] = myMAC[1];
@@ -393,13 +385,6 @@ int main(int argc, char* argv[]){
     		pac[9] = myMAC[3];
     		pac[10] = myMAC[4];
     		pac[11] = myMAC[5];
-
-    		// pac[22] = myMAC[0];
-    		// pac[23] = myMAC[1];
-    		// pac[24] = myMAC[2];
-    		// pac[25] = myMAC[3];
-    		// pac[26] = myMAC[4];
-    		// pac[27] = myMAC[5];
 
     		printf("packet relay!\n\n");
     		pcap_sendpacket(handle, pac, header -> len); 
@@ -410,7 +395,25 @@ int main(int argc, char* argv[]){
     }
     else{
     	printf("Sender 꺼 아님\n");
-    	pcap_sendpacket(handle, packet, 42); 
+
+    	// Eth Destination
+    		pac[0] = senderMAC[0];
+    		pac[1] = senderMAC[1];
+    		pac[2] = senderMAC[2];
+    		pac[3] = senderMAC[3];
+    		pac[4] = senderMAC[4];
+    		pac[5] = senderMAC[5];
+    		// Eth Source
+    		pac[6] = myMAC[0];
+    		pac[7] = myMAC[1];
+    		pac[8] = myMAC[2];
+    		pac[9] = myMAC[3];
+    		pac[10] = myMAC[4];
+    		pac[11] = myMAC[5];
+
+    		printf("다보내~~!\n\n");
+    		pcap_sendpacket(handle, pac, header -> len); 
+    	
     }
 
 
