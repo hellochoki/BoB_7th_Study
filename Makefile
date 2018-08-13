@@ -1,6 +1,6 @@
 all:
-	gcc relay_arp.c -o relay_arp -w -lpcap -lpthread
+	gcc relay_arp.c -o arp_spoof -w -lpcap -lpthread
 
 clean:
-	rm relay_arp
+	rm arp_spoof
 	rm *.txt

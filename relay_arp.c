@@ -40,13 +40,13 @@ struct arp_pk {
 int main(int argc, char* argv[]){
 
 
-	if(argc != 4) {
-	printf("error, it should be like this :./arp_spoof <interface> <sender ip 1> <target ip 1>\n");
-	//printf("error, it should be like this :./arp_spoof <interface> <sender ip 1> <target ip 1> <sender ip 2> <target ip 2>\n");
+	if(argc != 6) {
+	// printf("error, it should be like this :./arp_spoof <interface> <sender ip 1> <target ip 1>\n");
+	printf("error, it should be like this :./arp_spoof <interface> <sender ip 1> <target ip 1> <sender ip 2> <target ip 2>\n");
 	return -1;
 	}
 
-	printf("%s, %s\n",argv[2],argv[3]);
+	// printf("%s, %s\n",argv[2],argv[3]);
 
 
 	unsigned int iMac[6]; // temp MAC 담는 곳 
@@ -359,6 +359,8 @@ int main(int argc, char* argv[]){
     for(int i = 0; i < header -> caplen; i++ ){
 		pac[i] = packet2[i];
 	}
+
+	
 
 
     if(packet2[6]==senderMAC[0]&& packet2[7]==senderMAC[1]&& packet2[8]==senderMAC[2]&& packet2[9]==senderMAC[3]&& packet2[10]==senderMAC[4]&& packet2[11]==senderMAC[5]){ // SOURCE MAC 이 Sender꺼라면 ARP 인지 확인, 아니면 그냥 spoofing packet send
