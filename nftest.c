@@ -5,12 +5,42 @@
 #include <linux/types.h>
 #include <linux/netfilter.h>        /* for NF_ACCEPT */
 #include <errno.h>
-
+#include <netinet/ip.h>
+#include <netinet/tcp.h>
 #include <libnetfilter_queue/libnetfilter_queue.h>
+#include <regex.h>
+
+
+
+struct tcphdr *tcp_packet;
+struct ip *ip_packet;
+
+int match;
 
 void dump(unsigned char* buf, int size) {
     int i;
-    for (i = 0; i < size; i++) {
+    match = 0;
+
+    regex_t state;
+    const char *pattern = "sex.com";
+    //"Host: ([^\r]*)";
+
+
+    ip_packet = (struct ip*)buf;
+    buf += ip_packet->ip_hl*4;
+    tcp_packet = (struct tcphdr*)buf;
+    buf += tcp_packet->th_off*4;
+
+    size = size - ip_packet->ip_hl*4 - tcp_packet->th_off*4;
+
+    if (regcomp(&state, pattern, REG_EXTENDED)) return;
+
+      int status = regexec(&state,(const char*)buf, 0, NULL, 0);
+
+      printf("%s: %s\n", buf, status == 0 ? "match" : "no match");
+	if(status == 0 ) { match = 1; }
+
+    for (i = 0; i < size; i++) {	
         if (i % 16 == 0)
             printf("\n");
         printf("%02x ", buf[i]);
@@ -21,8 +51,11 @@ void dump(unsigned char* buf, int size) {
 static u_int32_t print_pkt (struct nfq_data *tb)
 {
     int id = 0;
+
     struct nfqnl_msg_packet_hdr *ph;
     struct nfqnl_msg_packet_hw *hwph;
+
+
     u_int32_t mark,ifi; 
     int ret;
     unsigned char *data;
@@ -77,9 +110,15 @@ static u_int32_t print_pkt (struct nfq_data *tb)
 static int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,
           struct nfq_data *nfa, void *data)
 {
+
     u_int32_t id = print_pkt(nfa);
     printf("entering callback\n");
+    if(match == 1){
+    return nfq_set_verdict(qh, id, NF_DROP, 0 ,NULL);
+    }
+    else{
     return nfq_set_verdict(qh, id, NF_ACCEPT, 0, NULL);
+    }
 }
 
 int main(int argc, char **argv)
