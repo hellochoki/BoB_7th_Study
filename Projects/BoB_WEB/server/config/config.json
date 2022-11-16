@@ -1,0 +1,44 @@
+{
+    "development": {
+        "title": "yournokt",
+        "port": 3000,
+        "db": {
+            "host": "yournokt.cplj1fqs9kzz.ap-northeast-2.rds.amazonaws.com",
+            "user": "choki",
+            "username": "choki",
+            "password": "chokichoki",
+            "database": "dtb",
+            "dialect": "mysql",
+            "logging": true,
+            "multipleStatements": true,
+            "timezone": "+09:00",
+            "upload_path": "webdata/uploads",
+            "operatorsAliases": false
+        },
+        "path": {
+              "view": "/../.tmp/serve",
+              "index": "/../src"
+        }
+    },
+  "production": {
+    "title": "yournokt",
+    "port": 8080,
+    "db": {
+      "host": "127.0.0.1",
+      "port": "8080",
+      "user": "root",
+      "username": "root",
+      "password": "suattt",
+      "database": "test",
+      "dialect": "mysql",
+      "logging": true,
+      "multipleStatements": true,
+      "timezone": "+09:00",
+      "upload_path": "webdata/uploads"
+    },
+    "path": {
+      "view": "/../dist",
+      "index": "/../dist"
+    }
+  }
+}

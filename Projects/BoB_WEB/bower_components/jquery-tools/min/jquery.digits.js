@@ -1,0 +1,1 @@
+$.fn.digits=function(){return this.each(function(){var num=$(this).text();num?num=isNaN(num)||""===num||null===num?0:num:(num=$(this).val(),num&&(num=isNaN(num)||""===num||null===num?0:num)),$(this).val(num)})};

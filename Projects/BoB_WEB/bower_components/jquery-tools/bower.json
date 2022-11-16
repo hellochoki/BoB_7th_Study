@@ -1,0 +1,27 @@
+{
+  "name": "jquery-tools",
+  "version": "1.0.0",
+  "homepage": "https://github.com/h-zone/jquery-tools",
+  "authors": [
+    "Stanislav Kabin <me@h-zone.ru>"
+  ],
+  "description": "Useful jQuery tools. Just missing functionality",
+  "main": [
+    "index.html"
+  ],
+  "keywords": [
+    "jquery-tools"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "external"
+  ],
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}

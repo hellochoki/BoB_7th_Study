@@ -1,0 +1,53 @@
+.navbar-brand {
+    color: #777 !important;
+}
+
+.container-fluid {
+    height: 60px;
+}
+
+.nav{
+    height: 60px;
+}
+
+
+.btn {
+    padding: 0px 0px;
+}
+
+.card {
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.uploadbtn {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding : 0;
+    margin : 0;
+}
+
+table a {
+    color : #777;
+}
